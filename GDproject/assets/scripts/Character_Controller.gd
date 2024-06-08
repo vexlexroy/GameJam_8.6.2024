@@ -1,10 +1,16 @@
 extends Node
 
+class_name Character
+
 @export var rot_speed : float
-@export var propulsion_speed : float
 @export var syphon_factor : float
 @export var release_factor : float
 @export var hop_factor : float
+
+# ---- Elements propulsion factors ----
+@export var propulsion_fac_air : float
+@export var propulsion_fac_water : float
+@export var propulsion_fac_helium : float
 
 var input : int
 var syphoning : bool
@@ -13,6 +19,8 @@ var cap_in : bool;
 var storage_node;
 
 var contact_cnt : int
+
+var in_water : bool = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,19 +37,23 @@ var timer = 0;
 # TEST
 func _process(delta):
 	syphoning = Input.is_action_pressed("syphon");
-	if syphoning and timer <= 0:
+	if syphoning:
+		"""
 		# TEST
 		var _syphoned_amount = storage_node.syphon(cnt % 2, 2.0);
 		cnt += 1;
 		timer = 2;
 		# TEST
-		#var amount = syphon_factor * delta;
-		#var el = 0; # TODO: Get element depending on environment
-		#var _syphoned_amount = storage_node.syphon(el, amount);
+		"""
+		var amount = syphon_factor * delta;
+		var el = 3 if in_water else 0; # TODO: Get element depending on environment
+		var _syphoned_amount = storage_node.syphon(el, amount);
+	"""
 	# TEST
 	if (timer > 0):
 		timer -= delta;
 	# TEST
+	"""
 	return;
 # TEST
 
@@ -80,9 +92,28 @@ func _integrate_forces(state):
 			#	prnts += "(" +  GameMaster.Elements.keys()[portion.element] + " : " + str(portion.amount) + ") ,";
 			#print(prnts);
 			forward = self.transform.basis.y;
-			state.apply_force(forward * grav_mag * propulsion_speed * state.step, Vector3(0, 0, -0.1));
+			var prop_fac = average_prop_factor(release_arr);
+			state.apply_force(forward * grav_mag * prop_fac * state.step, Vector3(0, 0, -0.1));
 	return
-	
+
+func average_prop_factor(portions : Array):
+	var res = 0.0;
+	var sum = 0.0;
+	for portion in portions:
+		match (portion.element):
+			GameMaster.Elements.O:
+				res += float(propulsion_fac_air) * float(portion.amount); sum += portion.amount;
+			GameMaster.Elements.H2O:
+				res += float(propulsion_fac_water) * float(portion.amount); sum += portion.amount;
+			GameMaster.Elements.He:
+				res += float(propulsion_fac_helium) * float(portion.amount); sum += portion.amount;
+	return float(res) / float(sum);
+
+
+# ------  Phase switches  ------
+func fell_in_water(): in_water = true;
+func exited_water(): in_water = false;
+
 
 # ------  Signals  ------
 func _on_cap_area_body_entered(_body):

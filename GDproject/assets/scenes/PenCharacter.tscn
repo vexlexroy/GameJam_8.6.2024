@@ -75,12 +75,12 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 script = ExtResource("1_7c755")
 rot_speed = 1.0
-propulsion_speed = 1.0
 syphon_factor = 1.0
 release_factor = 1.0
 hop_factor = 1.0
 
 [node name="PenMesh" type="MeshInstance3D" parent="."]
+layers = 16
 mesh = ExtResource("2_alnbb")
 
 [node name="PenCollider" type="CollisionShape3D" parent="."]
@@ -90,6 +90,7 @@ shape = SubResource("ConvexPolygonShape3D_a8otl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
 
 [node name="CapMesh" type="MeshInstance3D" parent="CapPivot"]
+layers = 16
 mesh = ExtResource("3_wpf2n")
 skeleton = NodePath("../..")
 

@@ -21,23 +21,6 @@ func _ready():
 	UI_node = get_node("../../UI/Storage_UI");
 	return;
 	
-# TEST
-"""
-var first_frame = true;
-func firstFrame():
-	if (first_frame):
-		for i in [Portion.new(0, 2.5), Portion.new(1, 2.5), Portion.new(2, 2.5)]:
-			await get_tree().create_timer(2.0).timeout;
-			syphon(i.element, i.amount);
-			print("hello" + str(i.element));
-		first_frame = false;
-	return;
-	
-func _process(delta):
-	firstFrame();
-	return;
-"""
-# /TEST
 
 
 func syphon(element : GameMaster.Elements, amount : float = 1):

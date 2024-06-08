@@ -10,7 +10,7 @@ var Element_Colors = [
 	Color(150, 245, 245),	# 0 -> O; 	Oxygen
 	Color(250, 250, 250),	# 1 -> H; 	Hydrogen
 	Color(196, 196, 196),	# 2 -> C; 	Carbon
-	Color(71, 108, 255)					# 3 -> H2O;	Water
+	Color(71, 108, 255)		# 3 -> H2O;	Water
 ];
 
 func _ready():
