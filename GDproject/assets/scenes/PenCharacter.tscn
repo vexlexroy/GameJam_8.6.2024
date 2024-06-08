@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dflod6dc7gejj"]
+
+[ext_resource type="ArrayMesh" uid="uid://b56xpkcq8yamk" path="res://assets/3Dmodels/Pen_models/pen_cylinder.res" id="1_f31ql"]
+
+[node name="PenCharacter" type="CharacterBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_f31ql")
