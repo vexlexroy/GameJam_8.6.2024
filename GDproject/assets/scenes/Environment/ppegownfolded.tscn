@@ -11,6 +11,7 @@ data = PackedVector3Array(-21.1547, 10.1798, 18.3477, -26.4518, 4.8501, 4.3693, 
 mesh = ExtResource("1_31e66")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_mask = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_72qbn")
