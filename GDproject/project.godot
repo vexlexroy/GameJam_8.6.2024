@@ -13,3 +13,7 @@ config_version=5
 config/name="GameJam_6.8.2024"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="GameJam_6.8.2024"
