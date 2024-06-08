@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdifevcfoydjb"]
+
+[ext_resource type="Texture2D" uid="uid://bgpjrjujt0csj" path="res://assets/Icons/PenMainMenuIcon.png" id="1_8f4tn"]
+[ext_resource type="Texture2D" uid="uid://bviusis4r5bms" path="res://assets/Icons/PlayButton.png" id="2_7ujdu"]
+[ext_resource type="Texture2D" uid="uid://bhbqhlm7ojpee" path="res://assets/Icons/QuitButton.png" id="3_carhc"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PenMascot" type="Sprite2D" parent="."]
+position = Vector2(142, 327)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8f4tn")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 87.75
+offset_right = 797.0
+offset_bottom = 291.75
+icon = ExtResource("2_7ujdu")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 367.75
+offset_right = 796.0
+offset_bottom = 571.75
+icon = ExtResource("3_carhc")

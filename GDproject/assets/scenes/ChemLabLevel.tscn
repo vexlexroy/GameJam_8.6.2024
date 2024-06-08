@@ -1,24 +1,24 @@
 [gd_scene load_steps=22 format=3 uid="uid://rn6x8570uam"]
 
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
+[ext_resource type="PackedScene" uid="uid://cqakvtbvxnhqx" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
 [ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
 [ext_resource type="PackedScene" uid="uid://dytlwgceafw0e" path="res://assets/scenes/Environment/Counter2.tscn" id="3_fuinu"]
-[ext_resource type="PackedScene" uid="uid://woxngmukit4c" path="res://assets/scenes/Environment/fire_extinguisher.tscn" id="4_mgl40"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/book_001.tscn" id="5_gi74s"]
-[ext_resource type="PackedScene" uid="uid://bdq58yjwn5flj" path="res://assets/scenes/Environment/sink.tscn" id="6_6c0a4"]
+[ext_resource type="PackedScene" uid="uid://d0yb2urk2njjg" path="res://assets/scenes/Environment/fire_extinguisher.tscn" id="4_mgl40"]
+[ext_resource type="PackedScene" uid="uid://b3w1ogw5kemmt" path="res://assets/scenes/Environment/book_001.tscn" id="5_gi74s"]
+[ext_resource type="PackedScene" uid="uid://ifrcddru2yw7" path="res://assets/scenes/Environment/sink.tscn" id="6_6c0a4"]
 [ext_resource type="PackedScene" uid="uid://dlhs2j6cj60b8" path="res://assets/scenes/sceneobjects/buchner_flask_large.tscn" id="7_ky4o7"]
 [ext_resource type="PackedScene" uid="uid://c8wi7q2kkm4mj" path="res://assets/scenes/sceneobjects/beaker_medium.tscn" id="8_3ic6i"]
 [ext_resource type="PackedScene" uid="uid://b6a3mjag6see5" path="res://assets/scenes/sceneobjects/beaker_large.tscn" id="9_vuo74"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/bunsen_burner.tscn" id="10_hfcic"]
-[ext_resource type="PackedScene" uid="uid://bsg1pvhn8w6cr" path="res://assets/scenes/Environment/book_03.tscn" id="11_jevhs"]
-[ext_resource type="PackedScene" uid="uid://bi3pee4wj23pd" path="res://assets/scenes/Environment/book__003.tscn" id="12_e7853"]
+[ext_resource type="PackedScene" uid="uid://bafq8o8l5aphp" path="res://assets/scenes/Environment/bunsen_burner.tscn" id="10_hfcic"]
+[ext_resource type="PackedScene" uid="uid://demx2tj582y50" path="res://assets/scenes/Environment/book_03.tscn" id="11_jevhs"]
+[ext_resource type="PackedScene" uid="uid://eljihu4n7onr" path="res://assets/scenes/Environment/book__003.tscn" id="12_e7853"]
 [ext_resource type="PackedScene" uid="uid://cad13nd32umfe" path="res://assets/scenes/sceneobjects/bottle_glassware_boiling_tube_large.tscn" id="13_pab6c"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/banana_make_us_happy.tscn" id="14_ri1l3"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/monitor.tscn" id="15_k4632"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/keyboard.tscn" id="16_cu0db"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/mouse.tscn" id="17_13nxh"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/chair.tscn" id="18_kq5us"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/ppegownfolded.tscn" id="19_4flg6"]
+[ext_resource type="PackedScene" uid="uid://bamdqbt4126tr" path="res://assets/scenes/Environment/banana_make_us_happy.tscn" id="14_ri1l3"]
+[ext_resource type="PackedScene" uid="uid://bbongmfdp3wnl" path="res://assets/scenes/Environment/monitor.tscn" id="15_k4632"]
+[ext_resource type="PackedScene" uid="uid://ca5uhaubr0w26" path="res://assets/scenes/Environment/keyboard.tscn" id="16_cu0db"]
+[ext_resource type="PackedScene" uid="uid://d1uprfrwuhucf" path="res://assets/scenes/Environment/mouse.tscn" id="17_13nxh"]
+[ext_resource type="PackedScene" uid="uid://bhmy5a4f8ai7u" path="res://assets/scenes/Environment/chair.tscn" id="18_kq5us"]
+[ext_resource type="PackedScene" uid="uid://crgkmgw562exl" path="res://assets/scenes/Environment/ppegownfolded.tscn" id="19_4flg6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
 size = Vector3(5000, 2, 500)
@@ -156,12 +156,6 @@ transform = Transform3D(0.809886, 0.586308, -0.0181355, 0.255205, -0.380024, -0.
 
 [node name="Counter2_9" parent="." instance=ExtResource("3_fuinu")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1439.24, 35, -1.57696)
-
-[node name="Counter2_10" parent="." instance=ExtResource("3_fuinu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1377.37, 35, -1.57696)
-
-[node name="Counter2_11" parent="." instance=ExtResource("3_fuinu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1316.66, 35, -1.57696)
 
 [node name="Counter2_12" parent="." instance=ExtResource("3_fuinu")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1254.79, 35, -1.57696)
