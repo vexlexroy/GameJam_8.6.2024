@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhuxt4ajbm5ia"]
+
+[ext_resource type="Script" path="res://assets/scripts/UIElements.gd" id="1_3nmx8"]
+[ext_resource type="Texture2D" uid="uid://bvhjfnimj1g4v" path="res://assets/UIelements/pen.png" id="2_mstkl"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3nmx8")
+
+[node name="StackOfElements" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 69.0
+offset_right = 100.0
+offset_bottom = 219.0
+alignment = 2
+
+[node name="Pen_sprite" type="Sprite2D" parent="."]
+position = Vector2(68, 150)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mstkl")
