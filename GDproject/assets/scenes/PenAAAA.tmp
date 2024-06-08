@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dflod6dc7gejj"]
+[gd_scene load_steps=11 format=3 uid="uid://dflod6dc7gejj"]
 
 [ext_resource type="Script" path="res://assets/scripts/Character_Controller.gd" id="1_7c755"]
 [ext_resource type="ArrayMesh" uid="uid://fictiordne7r" path="res://assets/3Dmodels/Pen_models/pen_pen.res" id="2_alnbb"]
@@ -6,6 +6,17 @@
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a8otl"]
 points = PackedVector3Array(0.539347, 6.74106, 0.531794, -1.11055, -7.63665, -0.646168, -1.11055, -7.63665, 0.531794, 1.48218, -7.63665, -0.1749, -0.639007, 5.09021, -1.11764, -1.11055, 5.32647, 0.531794, 0.774866, -7.63665, 1.00327, 0.539347, 5.09021, -1.11764, 0.539347, -7.63665, -1.11764, 1.01064, 5.09021, 0.767428, -0.639007, 5.32647, 1.00327, 1.01064, 5.32647, -0.646168, -0.403234, 7.44835, -0.410534, 1.48218, -3.62914, 0.531794, -0.639007, -7.63665, 1.00327, -1.11055, 5.09021, -0.646168, -0.639007, -7.63665, -1.11764, 0.774866, 5.09021, 1.00327, -0.403234, 7.21209, 0.531794, 0.303575, 7.44835, -0.410534, 1.48218, -7.63665, 0.531794, 1.48218, -3.62914, -0.1749, 0.539347, 7.21209, 0.29616, 1.01064, 5.56125, 0.531794, 0.303575, 6.97584, -0.646168, 0.539347, 5.56125, 1.00327, -0.639007, 6.97584, 0.29616, 0.303575, 7.21209, 0.531794, -0.403234, 5.32647, -1.11764, 0.539347, 7.21209, -0.1749, -1.11055, 5.32647, -0.410534, 0.774866, 5.56125, -0.881802)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gt68u"]
+points = PackedVector3Array(0.667843, -1.58503, -0.143048, -0.671844, -1.61159, -0.112641, -0.675067, -1.6146, -0.0236483, -0.653453, -0.0211718, 0.247868, -0.0782616, -0.034229, -0.679624, 0.465263, -0.0199516, 0.520645, -0.168973, -1.70865, 0.636427, 0.0110777, -1.73516, -0.651235, 0.580411, -0.0293869, -0.383268, 0.428711, -1.76355, 0.483227, -0.581899, -0.0394132, -0.379352, -0.197689, -0.0333342, 0.662656, -0.16989, -1.95416, -0.325689, -0.3159, -1.58267, -0.618202, -0.46187, -1.60884, 0.508257, 0.308989, -1.58398, -0.619541, 0.635629, -0.0363943, 0.273703, 0.403493, -1.92354, -0.265083, -0.291133, -1.92596, 0.369161, 0.190124, -1.58496, 0.662765, 0.640294, -1.61732, 0.245671, 0.310469, -0.0302316, -0.62243, -0.521386, -1.75722, -0.378485, 0.191092, -0.028412, 0.666117, 0.43467, -1.9254, 0.18766, 0.577589, -1.58443, -0.381459, -0.64927, -1.58857, 0.246216, 0.671262, -0.0282063, -0.143731, -0.472161, -1.92498, -0.0238424, -0.317214, -0.0328255, -0.620768, -0.67187, -0.0381446, -0.142334, -0.433211, -0.0403851, 0.539091)
+
+[sub_resource type="GDScript" id="GDScript_7lwmy"]
+script/source = "extends CollisionShape3D
+
+func _body_entered(body):
+	print(\"lol\");
+	print(body);
+"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ewmf"]
 
@@ -22,17 +33,10 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, -7.5, 0, 0.5, 1, 0, -6.2, 0)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CapArea/CapCollider")
+tracks/1/path = NodePath("CapCollider")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, -7.5, 0, 0.5, 1, 0, -6.2, 0)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CapCollider")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0, -7.5, 0, 0.5, 1, 0, -6.2, 0)
 
 [sub_resource type="Animation" id="Animation_qe4s2"]
 resource_name = "pen_click_out"
@@ -47,26 +51,16 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, -6.2, 0, 0.5, 1, 0, -7.5, 0)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CapArea/CapCollider")
+tracks/1/path = NodePath("CapCollider")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, -6.2, 0, 0.5, 1, 0, -7.5, 0)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CapCollider")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0, -6.2, 0, 0.5, 1, 0, -7.5, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ma3nk"]
 _data = {
 "pen_click_in": SubResource("Animation_3rbu2"),
 "pen_click_out": SubResource("Animation_qe4s2")
 }
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gt68u"]
-points = PackedVector3Array(0.667843, -1.58503, -0.143048, -0.671844, -1.61159, -0.112641, -0.675067, -1.6146, -0.0236483, -0.653453, -0.0211718, 0.247868, -0.0782616, -0.034229, -0.679624, 0.465263, -0.0199516, 0.520645, -0.168973, -1.70865, 0.636427, 0.0110777, -1.73516, -0.651235, 0.580411, -0.0293869, -0.383268, 0.428711, -1.76355, 0.483227, -0.581899, -0.0394132, -0.379352, -0.197689, -0.0333342, 0.662656, -0.16989, -1.95416, -0.325689, -0.3159, -1.58267, -0.618202, -0.46187, -1.60884, 0.508257, 0.308989, -1.58398, -0.619541, 0.635629, -0.0363943, 0.273703, 0.403493, -1.92354, -0.265083, -0.291133, -1.92596, 0.369161, 0.190124, -1.58496, 0.662765, 0.640294, -1.61732, 0.245671, 0.310469, -0.0302316, -0.62243, -0.521386, -1.75722, -0.378485, 0.191092, -0.028412, 0.666117, 0.43467, -1.9254, 0.18766, 0.577589, -1.58443, -0.381459, -0.64927, -1.58857, 0.246216, 0.671262, -0.0282063, -0.143731, -0.472161, -1.92498, -0.0238424, -0.317214, -0.0328255, -0.620768, -0.67187, -0.0381446, -0.142334, -0.433211, -0.0403851, 0.539091)
 
 [node name="PenCharacterRG" type="RigidBody3D"]
 collision_layer = 16
@@ -77,7 +71,6 @@ rot_speed = 1.0
 propulsion_speed = 1.0
 syphon_factor = 1.0
 release_factor = 1.0
-hop_factor = 1.0
 
 [node name="PenMesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_alnbb")
@@ -92,23 +85,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
 mesh = ExtResource("3_wpf2n")
 skeleton = NodePath("../..")
 
+[node name="CapCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
+shape = SubResource("ConvexPolygonShape3D_gt68u")
+script = SubResource("GDScript_7lwmy")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2ewmf"),
 "Pen": SubResource("AnimationLibrary_ma3nk")
 }
 speed_scale = 5.0
-
-[node name="CapArea" type="Area3D" parent="."]
-collision_layer = 16
-
-[node name="CapCollider" type="CollisionShape3D" parent="CapArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
-shape = SubResource("ConvexPolygonShape3D_gt68u")
-
-[node name="CapCollider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
-shape = SubResource("ConvexPolygonShape3D_gt68u")
-
-[connection signal="body_entered" from="CapArea" to="." method="_on_cap_area_body_entered"]
-[connection signal="body_exited" from="CapArea" to="." method="_on_cap_area_body_exited"]
