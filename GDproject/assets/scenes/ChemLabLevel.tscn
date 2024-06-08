@@ -1,16 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=26 format=3 uid="uid://rn6x8570uam"]
 
 [ext_resource type="PackedScene" uid="uid://cqakvtbvxnhqx" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
 [ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
 [ext_resource type="PackedScene" uid="uid://dytlwgceafw0e" path="res://assets/scenes/Environment/Counter2.tscn" id="3_fuinu"]
-[ext_resource type="PackedScene" uid="uid://d0yb2urk2njjg" path="res://assets/scenes/Environment/fire_extinguisher.tscn" id="4_mgl40"]
+[ext_resource type="PackedScene" uid="uid://woxngmukit4c" path="res://assets/scenes/Environment/fire_extinguisher.tscn" id="4_mgl40"]
 [ext_resource type="PackedScene" uid="uid://b3w1ogw5kemmt" path="res://assets/scenes/Environment/book_001.tscn" id="5_gi74s"]
 [ext_resource type="PackedScene" uid="uid://ifrcddru2yw7" path="res://assets/scenes/Environment/sink.tscn" id="6_6c0a4"]
 [ext_resource type="PackedScene" uid="uid://dlhs2j6cj60b8" path="res://assets/scenes/sceneobjects/buchner_flask_large.tscn" id="7_ky4o7"]
 [ext_resource type="PackedScene" uid="uid://c8wi7q2kkm4mj" path="res://assets/scenes/sceneobjects/beaker_medium.tscn" id="8_3ic6i"]
 [ext_resource type="PackedScene" uid="uid://b6a3mjag6see5" path="res://assets/scenes/sceneobjects/beaker_large.tscn" id="9_vuo74"]
 [ext_resource type="PackedScene" uid="uid://bafq8o8l5aphp" path="res://assets/scenes/Environment/bunsen_burner.tscn" id="10_hfcic"]
-[ext_resource type="PackedScene" uid="uid://demx2tj582y50" path="res://assets/scenes/Environment/book_03.tscn" id="11_jevhs"]
+[ext_resource type="PackedScene" uid="uid://bsg1pvhn8w6cr" path="res://assets/scenes/Environment/book_03.tscn" id="11_jevhs"]
 [ext_resource type="PackedScene" uid="uid://eljihu4n7onr" path="res://assets/scenes/Environment/book__003.tscn" id="12_e7853"]
 [ext_resource type="PackedScene" uid="uid://cad13nd32umfe" path="res://assets/scenes/sceneobjects/bottle_glassware_boiling_tube_large.tscn" id="13_pab6c"]
 [ext_resource type="PackedScene" uid="uid://bamdqbt4126tr" path="res://assets/scenes/Environment/banana_make_us_happy.tscn" id="14_ri1l3"]
@@ -19,12 +19,20 @@
 [ext_resource type="PackedScene" uid="uid://d1uprfrwuhucf" path="res://assets/scenes/Environment/mouse.tscn" id="17_13nxh"]
 [ext_resource type="PackedScene" uid="uid://bhmy5a4f8ai7u" path="res://assets/scenes/Environment/chair.tscn" id="18_kq5us"]
 [ext_resource type="PackedScene" uid="uid://crgkmgw562exl" path="res://assets/scenes/Environment/ppegownfolded.tscn" id="19_4flg6"]
+[ext_resource type="PackedScene" uid="uid://khivco66yyt8" path="res://assets/scenes/Environment/dish_evaporating.tscn" id="20_hqo3p"]
+[ext_resource type="PackedScene" uid="uid://bnxj026u7me2s" path="res://assets/scenes/Environment/dish_watch_glass.tscn" id="21_4ivkq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
 size = Vector3(5000, 2, 500)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tiqdc"]
 size = Vector3(5000, 2, 500)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yuaxt"]
+data = PackedVector3Array(-250, 150, 0.5, 250, 150, 0.5, -250, -150, 0.5, 250, 150, 0.5, 250, -150, 0.5, -250, -150, 0.5, 250, 150, -0.5, -250, 150, -0.5, 250, -150, -0.5, -250, 150, -0.5, -250, -150, -0.5, 250, -150, -0.5, 250, 150, 0.5, 250, 150, -0.5, 250, -150, 0.5, 250, 150, -0.5, 250, -150, -0.5, 250, -150, 0.5, -250, 150, -0.5, -250, 150, 0.5, -250, -150, -0.5, -250, 150, 0.5, -250, -150, 0.5, -250, -150, -0.5, 250, 150, 0.5, -250, 150, 0.5, 250, 150, -0.5, -250, 150, 0.5, -250, 150, -0.5, 250, 150, -0.5, -250, -150, 0.5, 250, -150, 0.5, -250, -150, -0.5, 250, -150, 0.5, 250, -150, -0.5, -250, -150, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jp7r8"]
+size = Vector3(500, 300, 1)
 
 [node name="ChemLabLevel" type="Node3D"]
 
@@ -36,6 +44,97 @@ shape = SubResource("BoxShape3D_6i27s")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_tiqdc")
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Startwall" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2500, 150, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Startwall"]
+shape = SubResource("ConcavePolygonShape3D_yuaxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Startwall"]
+mesh = SubResource("BoxMesh_jp7r8")
+
+[node name="Wall" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2250, 150, -42)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall"]
+shape = SubResource("ConcavePolygonShape3D_yuaxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall"]
+mesh = SubResource("BoxMesh_jp7r8")
+
+[node name="Wall2" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1750, 150, -42)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2"]
+shape = SubResource("ConcavePolygonShape3D_yuaxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall2"]
+mesh = SubResource("BoxMesh_jp7r8")
+
+[node name="Wall3" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1500, 150, -42)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall3"]
+shape = SubResource("ConcavePolygonShape3D_yuaxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall3"]
+mesh = SubResource("BoxMesh_jp7r8")
+
+[node name="Wall4" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1250, 150, -42)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall4"]
+shape = SubResource("ConcavePolygonShape3D_yuaxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall4"]
+mesh = SubResource("BoxMesh_jp7r8")
+
+[node name="Wall5" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1000, 150, -42)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall5"]
+shape = SubResource("ConcavePolygonShape3D_yuaxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall5"]
+mesh = SubResource("BoxMesh_jp7r8")
+
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 80)
+
+[node name="OmniLight3D1" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(-0.161604, 0, -0.986856, 0, 1, 0, 0.986856, 0, -0.161604, -2000, 0, 0)
+light_color = Color(0.882353, 0.882353, 1, 1)
+shadow_enabled = true
+omni_range = 500.0
+omni_attenuation = 0.01
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(-0.947768, 0, 0.318959, 0, 1, 0, -0.318959, 0, -0.947768, -1500, 0, 0)
+light_color = Color(0.901961, 0.901961, 1, 1)
+shadow_enabled = true
+omni_range = 500.0
+omni_attenuation = 0.01
+omni_shadow_mode = 0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(0.79653, 0, -0.604599, 0, 1, 0, 0.604599, 0, 0.79653, -1000, 0, 0)
+light_color = Color(0.921569, 0.921569, 1, 1)
+shadow_enabled = true
+omni_range = 500.0
+omni_attenuation = 0.01
+omni_shadow_mode = 0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(0.26892, 0, -0.963163, 0, 1, 0, 0.963163, 0, 0.26892, -500, 0, 0)
+light_color = Color(0.941176, 0.941176, 1, 1)
+shadow_enabled = true
+omni_range = 500.0
+omni_attenuation = 0.01
+omni_shadow_mode = 0
 
 [node name="MachineCalculatorLarge" parent="." instance=ExtResource("1_fx3pe")]
 transform = Transform3D(-0.92189, 0, -0.387451, 0, 1, 0, 0.387451, 0, -0.92189, -2411.4, 1.57878, -3.02923)
@@ -93,6 +192,15 @@ transform = Transform3D(0.941406, 0, 0.337276, 0, 1, 0, -0.337276, 0, 0.941406, 
 
 [node name="beaker_large" parent="." instance=ExtResource("9_vuo74")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2155.76, 77.9517, -27.0906)
+
+[node name="buchner_flask_large5" parent="." instance=ExtResource("7_ky4o7")]
+transform = Transform3D(-0.759305, 0, -0.650734, 0, 1, 0, 0.650734, 0, -0.759305, -1463.64, 75.0217, -15.0101)
+
+[node name="beaker_medium4" parent="." instance=ExtResource("8_3ic6i")]
+transform = Transform3D(0.887075, 0, 0.461625, 0, 1, 0, -0.461625, 0, 0.887075, -1453.19, 75.5455, -28.2962)
+
+[node name="beaker_large3" parent="." instance=ExtResource("9_vuo74")]
+transform = Transform3D(-0.759305, 0, -0.650734, 0, 1, 0, 0.650734, 0, -0.759305, -1435.93, 77.9517, -31.3615)
 
 [node name="beaker_medium2" parent="." instance=ExtResource("8_3ic6i")]
 transform = Transform3D(-0.973956, 0, 0.226736, 0, 1, 0, -0.226736, 0, -0.973956, -1985.33, 75.5455, -18.1866)
@@ -158,7 +266,13 @@ transform = Transform3D(0.809886, 0.586308, -0.0181355, 0.255205, -0.380024, -0.
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1439.24, 35, -1.57696)
 
 [node name="Counter2_12" parent="." instance=ExtResource("3_fuinu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1254.79, 35, -1.57696)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1184.79, 35, -1.57696)
+
+[node name="Counter2_13" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1122.99, 35, -1.57696)
+
+[node name="Counter2_16" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -937.45, 35, -1.57696)
 
 [node name="buchner_flask_large4" parent="." instance=ExtResource("7_ky4o7")]
 transform = Transform3D(0.809886, 0.586308, -0.0181355, 0.255205, -0.380024, -0.889074, -0.528163, 0.71542, -0.457404, -1602.55, 8.82277, 68.997)
@@ -172,37 +286,32 @@ transform = Transform3D(-0.995573, 0, -0.0939865, 0, 1, 0, 0.0939865, 0, -0.9955
 [node name="ppegownfolded3" parent="." instance=ExtResource("19_4flg6")]
 transform = Transform3D(-0.411403, 0, -0.911454, 0, 1, 0, 0.911454, 0, -0.411403, -1498.43, 22.3551, 0.34967)
 
-[node name="Lights" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 80)
+[node name="DishEvaporating" parent="." instance=ExtResource("20_hqo3p")]
+transform = Transform3D(0.528172, 0, -0.849138, 0, 1, 0, 0.849138, 0, 0.528172, -1418.85, 70.701, 3.73004)
 
-[node name="OmniLight3D1" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(-0.161604, 0, -0.986856, 0, 1, 0, 0.986856, 0, -0.161604, -2000, 0, 0)
-light_color = Color(0.882353, 0.882353, 1, 1)
-shadow_enabled = true
-omni_range = 500.0
-omni_attenuation = 0.01
-omni_shadow_mode = 0
+[node name="dish_watch_glass" parent="." instance=ExtResource("21_4ivkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1426.38, 69.5343, -19.0958)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(-0.947768, 0, 0.318959, 0, 1, 0, -0.318959, 0, -0.947768, -1500, 0, 0)
-light_color = Color(0.901961, 0.901961, 1, 1)
-shadow_enabled = true
-omni_range = 500.0
-omni_attenuation = 0.01
-omni_shadow_mode = 0
+[node name="Monitor2" parent="." instance=ExtResource("15_k4632")]
+transform = Transform3D(0.985158, 0.171518, 0.00673772, -0.0253665, 0.106651, 0.993973, 0.169766, -0.979391, 0.109419, -1205.64, 72.8546, 32.0328)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(0.79653, 0, -0.604599, 0, 1, 0, 0.604599, 0, 0.79653, -1000, 0, 0)
-light_color = Color(0.921569, 0.921569, 1, 1)
-shadow_enabled = true
-omni_range = 500.0
-omni_attenuation = 0.01
-omni_shadow_mode = 0
+[node name="Keyboard2" parent="." instance=ExtResource("16_cu0db")]
+transform = Transform3D(0.936794, 0, 0.34988, 0, 1, 0, -0.34988, 0, 0.936794, -1206.49, 78.8332, -1.75673)
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(0.26892, 0, -0.963163, 0, 1, 0, 0.963163, 0, 0.26892, -500, 0, 0)
-light_color = Color(0.941176, 0.941176, 1, 1)
-shadow_enabled = true
-omni_range = 500.0
-omni_attenuation = 0.01
-omni_shadow_mode = 0
+[node name="MachineCalculatorLarge2" parent="." instance=ExtResource("1_fx3pe")]
+transform = Transform3D(-0.900835, 0, 0.434162, 0, 1, 0, -0.434162, 0, -0.900835, -1146.48, 71.5255, 7.59239)
+
+[node name="Book_003" parent="." instance=ExtResource("5_gi74s")]
+transform = Transform3D(25, 0, 0, 0, -0.788759, -24.9876, 0, 24.9876, -0.788759, -1118.78, 72.542, 11.334)
+
+[node name="book__007" parent="." instance=ExtResource("12_e7853")]
+transform = Transform3D(21.1449, 13.3174, -0.734267, -0.334146, -0.846937, -24.9834, -13.3335, 21.1407, -0.538337, -1120.39, 79.8486, 3.71223)
+
+[node name="Book_004" parent="." instance=ExtResource("5_gi74s")]
+transform = Transform3D(-24.7688, 3.39077, -0.107033, 0, -0.788759, -24.9876, -3.39246, -24.7564, 0.781463, -957.21, 72.542, 3.63833)
+
+[node name="book__008" parent="." instance=ExtResource("12_e7853")]
+transform = Transform3D(-22.7586, -10.3255, 0.654424, -0.334146, -0.846937, -24.9834, 10.3408, -22.7523, 0.632996, -956.651, 79.8486, 11.4079)
+
+[node name="book_07" parent="." instance=ExtResource("11_jevhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -961.566, 83.1941, 3.90477)
