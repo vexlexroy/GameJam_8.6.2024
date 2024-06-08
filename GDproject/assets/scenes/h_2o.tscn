@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx3y66s3v1s5j"]
+
+[ext_resource type="Shader" path="res://assets/Shaders/WaterShader.tres" id="1_bfslp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ty5wp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cukat"]
+emission_enabled = true
+emission = Color(0, 0.72549, 1, 1)
+emission_energy_multiplier = 1.53
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dnwmw"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_cukat")
+shader = ExtResource("1_bfslp")
+shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0xaw"]
+
+[node name="H2O" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ty5wp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+material_override = SubResource("ShaderMaterial_dnwmw")
+transparency = 0.79
+cast_shadow = 0
+extra_cull_margin = 5074.69
+mesh = SubResource("BoxMesh_a0xaw")
