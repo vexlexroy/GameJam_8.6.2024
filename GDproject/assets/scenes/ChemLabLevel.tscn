@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=27 format=3 uid="uid://rn6x8570uam"]
 
 [ext_resource type="PackedScene" uid="uid://cqakvtbvxnhqx" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
 [ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://crgkmgw562exl" path="res://assets/scenes/Environment/ppegownfolded.tscn" id="19_4flg6"]
 [ext_resource type="PackedScene" uid="uid://khivco66yyt8" path="res://assets/scenes/Environment/dish_evaporating.tscn" id="20_hqo3p"]
 [ext_resource type="PackedScene" uid="uid://bnxj026u7me2s" path="res://assets/scenes/Environment/dish_watch_glass.tscn" id="21_4ivkq"]
+[ext_resource type="PackedScene" uid="uid://cx3y66s3v1s5j" path="res://assets/scenes/h_2o.tscn" id="22_16i88"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
 size = Vector3(5000, 2, 500)
@@ -302,16 +303,25 @@ transform = Transform3D(0.936794, 0, 0.34988, 0, 1, 0, -0.34988, 0, 0.936794, -1
 transform = Transform3D(-0.900835, 0, 0.434162, 0, 1, 0, -0.434162, 0, -0.900835, -1146.48, 71.5255, 7.59239)
 
 [node name="Book_003" parent="." instance=ExtResource("5_gi74s")]
-transform = Transform3D(25, 0, 0, 0, -0.788759, -24.9876, 0, 24.9876, -0.788759, -1118.78, 72.542, 11.334)
+transform = Transform3D(25, 0, 0, 0, -0.78876, -24.9876, 0, 24.9876, -0.78876, -1118.78, 72.542, 11.334)
 
 [node name="book__007" parent="." instance=ExtResource("12_e7853")]
 transform = Transform3D(21.1449, 13.3174, -0.734267, -0.334146, -0.846937, -24.9834, -13.3335, 21.1407, -0.538337, -1120.39, 79.8486, 3.71223)
 
 [node name="Book_004" parent="." instance=ExtResource("5_gi74s")]
-transform = Transform3D(-24.7688, 3.39077, -0.107033, 0, -0.788759, -24.9876, -3.39246, -24.7564, 0.781463, -957.21, 72.542, 3.63833)
+transform = Transform3D(-24.7688, 3.39076, -0.107038, -6.89585e-08, -0.788791, -24.9876, -3.39246, -24.7564, 0.781497, -957.21, 72.542, 3.63833)
 
 [node name="book__008" parent="." instance=ExtResource("12_e7853")]
 transform = Transform3D(-22.7586, -10.3255, 0.654424, -0.334146, -0.846937, -24.9834, 10.3408, -22.7523, 0.632996, -956.651, 79.8486, 11.4079)
 
+[node name="book__009" parent="." instance=ExtResource("12_e7853")]
+transform = Transform3D(-24.6202, 4.34121, -1.8976e-07, 0, -1.09278e-06, -25, -4.34121, -24.6202, 1.07618e-06, -961.786, 99.1836, 14.744)
+
 [node name="book_07" parent="." instance=ExtResource("11_jevhs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -961.566, 83.1941, 3.90477)
+
+[node name="book_08" parent="." instance=ExtResource("11_jevhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -964.238, 89.7091, 3.80054)
+
+[node name="H2O" parent="." instance=ExtResource("22_16i88")]
+transform = Transform3D(50, 0, 0, 0, 30, 0, 0, 0, 40, -2028.22, 48.2516, 0.80002)
