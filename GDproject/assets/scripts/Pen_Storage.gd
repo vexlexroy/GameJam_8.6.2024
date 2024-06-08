@@ -10,7 +10,7 @@ var current_amount : float
 class Portion:
 	var element : GameMaster.Elements
 	var amount : float
-	func _init(e=-1, a=1): element = e; amount = a;
+	func _init(e : int = -1, a : float = 1): element = e; amount = a;
 var element_stack : Array[Portion]
 
 
@@ -40,6 +40,7 @@ func release_next(amount : float = 1) -> Array:
 		elif (last_portion.amount > loop_amount):
 			portions_released.append(Portion.new(last_portion.element, loop_amount));
 			element_stack[-1].amount -= loop_amount;
+			loop_amount = 0;
 			break;
 	current_amount -= (amount - loop_amount);
 	# TODO: Update UI
@@ -53,7 +54,7 @@ func print_storage():
 	print(prnts);
 	return;
 
-func add_element(element : GameMaster.Elements, amount : float = 1):
+func add_element(element : GameMaster.Elements, amount : float = 1) -> float:
 	if (current_amount == max_amount): return 0;
 	if (amount > max_amount - current_amount):
 		amount = max_amount - current_amount;

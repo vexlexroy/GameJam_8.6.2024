@@ -14,14 +14,12 @@ var storage_node;
 
 var contact_cnt : int
 
-var rng = RandomNumberGenerator.new();
-
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.contact_monitor = true;
-	self.max_contacts_reported  = 2;
+	self.max_contacts_reported  = 4;
 	contact_cnt = 0;
 	cap_in = false;
 	storage_node = get_node("./Storage");
@@ -31,10 +29,10 @@ func _process(delta):
 	syphoning = Input.is_action_pressed("syphon");
 	if syphoning:
 		var amount = syphon_factor * delta;
-		var el = rng.randi() % 2;
-		var syphoned_amount = storage_node.syphon(el, amount);
-		if (syphoned_amount == 0): print("full!");
-		else: print("syphoning... (" + GameMaster.Elements.keys()[el] + " : " + str(amount) + ")");
+		var el = 0;  # TODO: Get element depending on environment
+		var _syphoned_amount = storage_node.syphon(el, amount);
+		#if (syphoned_amount == 0): print("full!");
+		#else: print("syphoning... (" + GameMaster.Elements.keys()[el] + " : " + str(amount) + ")");
 	return;
 	
 func lerp(start, end, delta):
@@ -65,21 +63,21 @@ func _integrate_forces(state):
 	# -- Release/Propulsion
 	if !syphoning and Input.is_action_pressed("release"):
 		var release_arr = storage_node.release_next(release_factor * state.step);
-		if (len(release_arr) == 0): print("empty!");
+		if (len(release_arr) == 0): pass; #print("empty!");
 		else:
-			var prnts = "releasing: ";
-			for portion in release_arr:
-				prnts += "(" +  GameMaster.Elements.keys()[portion.element] + " : " + str(portion.amount) + ") ,";
-			print(prnts);
+			#var prnts = "releasing: ";
+			#for portion in release_arr:
+			#	prnts += "(" +  GameMaster.Elements.keys()[portion.element] + " : " + str(portion.amount) + ") ,";
+			#print(prnts);
 			forward = self.transform.basis.y;
 			state.apply_force(forward * grav_mag * propulsion_speed * state.step, Vector3(0, 0, -0.1));
 	return
 	
 
 # ------  Signals  ------
-func _on_cap_area_body_entered(body):
+func _on_cap_area_body_entered(_body):
 	contact_cnt += 1;
 	return;
-func _on_cap_area_body_exited(body):
+func _on_cap_area_body_exited(_body):
 	contact_cnt -= 1;
 	return;
