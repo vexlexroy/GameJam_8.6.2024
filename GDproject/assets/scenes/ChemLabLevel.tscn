@@ -1,15 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=16 format=3 uid="uid://rn6x8570uam"]
 
-[ext_resource type="PackedScene" uid="uid://dsy1c7pfkdkcv" path="res://assets/3Dmodels/Furniture/Counters/counter_counter_2_shelves.glb" id="1_ufapk"]
+[ext_resource type="PackedScene" uid="uid://cqakvtbvxnhqx" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
+[ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
+[ext_resource type="PackedScene" uid="uid://dytlwgceafw0e" path="res://assets/scenes/Environment/Counter2.tscn" id="3_fuinu"]
+[ext_resource type="PackedScene" uid="uid://d0yb2urk2njjg" path="res://assets/scenes/Environment/fire_extinguisher.tscn" id="4_mgl40"]
+[ext_resource type="PackedScene" uid="uid://b3w1ogw5kemmt" path="res://assets/scenes/Environment/book_001.tscn" id="5_gi74s"]
+[ext_resource type="PackedScene" uid="uid://ifrcddru2yw7" path="res://assets/scenes/Environment/sink.tscn" id="6_6c0a4"]
+[ext_resource type="PackedScene" uid="uid://dlhs2j6cj60b8" path="res://assets/scenes/sceneobjects/buchner_flask_large.tscn" id="7_ky4o7"]
+[ext_resource type="PackedScene" uid="uid://c8wi7q2kkm4mj" path="res://assets/scenes/sceneobjects/beaker_medium.tscn" id="8_3ic6i"]
+[ext_resource type="PackedScene" uid="uid://b6a3mjag6see5" path="res://assets/scenes/sceneobjects/beaker_large.tscn" id="9_vuo74"]
+[ext_resource type="PackedScene" uid="uid://bafq8o8l5aphp" path="res://assets/scenes/Environment/bunsen_burner.tscn" id="10_hfcic"]
+[ext_resource type="PackedScene" uid="uid://demx2tj582y50" path="res://assets/scenes/Environment/book_03.tscn" id="11_jevhs"]
+[ext_resource type="PackedScene" uid="uid://eljihu4n7onr" path="res://assets/scenes/Environment/book__003.tscn" id="12_e7853"]
+[ext_resource type="PackedScene" uid="uid://cad13nd32umfe" path="res://assets/scenes/sceneobjects/bottle_glassware_boiling_tube_large.tscn" id="13_pab6c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
 size = Vector3(5000, 2, 500)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tiqdc"]
 size = Vector3(5000, 2, 500)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kq4s0"]
-size = Vector3(62, 68, 60)
 
 [node name="ChemLabLevel" type="Node3D"]
 
@@ -22,11 +31,83 @@ shape = SubResource("BoxShape3D_6i27s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_tiqdc")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+[node name="MachineCalculatorLarge" parent="." instance=ExtResource("1_fx3pe")]
+transform = Transform3D(-0.92189, 0, -0.387451, 0, 1, 0, 0.387451, 0, -0.92189, -2411.4, 1.57878, -3.02923)
 
-[node name="Low Poly - Lab Assets" parent="StaticBody3D2" instance=ExtResource("1_ufapk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 35, 1)
+[node name="PencilCase" parent="." instance=ExtResource("2_3rcne")]
+transform = Transform3D(-0.718017, 0.696026, -3.04242e-08, 0, -4.37114e-08, -1, -0.696026, -0.718017, 3.13855e-08, -2476, 4.39355, 3.39471)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 35, 1)
-shape = SubResource("BoxShape3D_kq4s0")
+[node name="Counter2_1" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2152.95, 35, -1.57696)
+
+[node name="Counter2_2" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2091.08, 35, -1.57696)
+
+[node name="Counter2_3" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1967.95, 35, -1.57696)
+
+[node name="Counter2_4" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1906.08, 35, -1.57696)
+
+[node name="Counter2_5" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1843.79, 35, -1.57696)
+
+[node name="Counter2_6" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1781.93, 35, -1.57696)
+
+[node name="Counter2_7" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1721.21, 35, -1.57696)
+
+[node name="Counter2_8" parent="." instance=ExtResource("3_fuinu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1659.35, 35, -1.57696)
+
+[node name="FireExtinguisher" parent="." instance=ExtResource("4_mgl40")]
+transform = Transform3D(0.00209479, 0.644671, -0.764457, -0.00176654, 0.76446, 0.644668, 0.999996, 0, 0.00274022, -2204.79, 24.4879, -1.44347)
+
+[node name="Book_001" parent="." instance=ExtResource("5_gi74s")]
+transform = Transform3D(25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, -2238.2, 3.23379, 0.318176)
+
+[node name="Book_002" parent="." instance=ExtResource("5_gi74s")]
+transform = Transform3D(25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, -2073.96, 41.2895, 0.318176)
+
+[node name="Sink" parent="." instance=ExtResource("6_6c0a4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2029.11, 35.0212, -1.57185)
+
+[node name="buchner_flask_large" parent="." instance=ExtResource("7_ky4o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2124.48, 75.0217, -26.1222)
+
+[node name="beaker_medium" parent="." instance=ExtResource("8_3ic6i")]
+transform = Transform3D(-0.973956, 0, 0.226736, 0, 1, 0, -0.226736, 0, -0.973956, -2140.66, 75.5455, -18.1866)
+
+[node name="beaker_large" parent="." instance=ExtResource("9_vuo74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2155.76, 77.9517, -27.0906)
+
+[node name="beaker_medium2" parent="." instance=ExtResource("8_3ic6i")]
+transform = Transform3D(-0.973956, 0, 0.226736, 0, 1, 0, -0.226736, 0, -0.973956, -1985.33, 75.5455, -18.1866)
+
+[node name="beaker_large2" parent="." instance=ExtResource("9_vuo74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1969.3, 77.9517, -27.0906)
+
+[node name="bunsen_burner" parent="." instance=ExtResource("10_hfcic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1902.65, 69.0663, 0.390222)
+
+[node name="book_03" parent="." instance=ExtResource("11_jevhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2074.2, 44.8045, 0.727732)
+
+[node name="book__003" parent="." instance=ExtResource("12_e7853")]
+transform = Transform3D(25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, -2074.48, 54.6314, -12.9717)
+
+[node name="book_04" parent="." instance=ExtResource("11_jevhs")]
+transform = Transform3D(0.787957, 0, 0.61573, 0, 1, 0, -0.61573, 0, 0.787957, -1936.17, 69.0378, 7.84489)
+
+[node name="book__005" parent="." instance=ExtResource("12_e7853")]
+transform = Transform3D(19.6989, 15.3933, -6.72858e-07, 0, -1.09278e-06, -25, -15.3933, 19.6989, -8.61064e-07, -1944.83, 78.8647, -2.77481)
+
+[node name="book__004" parent="." instance=ExtResource("12_e7853")]
+transform = Transform3D(23.3929, -8.81891, 3.85485e-07, 0, -1.09278e-06, -25, 8.81891, 23.3929, -1.02253e-06, -2098.7, 40.8379, -9.94507)
+
+[node name="BottleGlasswareBoilingTubeLarge" parent="." instance=ExtResource("13_pab6c")]
+transform = Transform3D(0.831993, 0.554786, -2.42505e-08, 0, -4.37114e-08, -1, -0.554786, 0.831993, -3.63676e-08, -2372.6, 3.28369, -4.29124)
+
+[node name="BottleGlasswareBoilingTubeLarge2" parent="." instance=ExtResource("13_pab6c")]
+transform = Transform3D(0.668651, -0.743577, 3.25028e-08, 0, -4.37114e-08, -1, 0.743577, 0.668651, -2.92276e-08, -2313.82, 3.28369, -7.79832)

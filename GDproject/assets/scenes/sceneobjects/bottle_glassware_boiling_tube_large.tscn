@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cad13nd32umfe"]
 
-[ext_resource type="ArrayMesh" uid="uid://dlvqr20b361ik" path="res://assets/3Dmodels/Tubes and Flasks/Tubes/bottle_glassware_boiling_tube_large.res" id="1_jtfkd"]
+[ext_resource type="ArrayMesh" uid="uid://dlvqr20b361ik" path="res://assets/3Dmodels/Tubes and Flasks/Tubes/bottle_glassware_boiling_tube_large.res" id="1_riwq2"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eoate"]
 points = PackedVector3Array(3.7906, 19.6012, 1.29288, -0.502889, -1.14687, 3.08219, -0.491861, -1.09767, 4.14755, 4.14755, -1.09767, -0.491861, -0.491861, 19.6012, 3.07625, 3.07625, -1.09767, 3.07625, 3.07625, 19.6012, -0.491861, 1.29288, 19.6012, 3.7906, 3.08219, -1.14685, -0.502884, 3.07625, 19.6012, 3.07625, -0.491861, 19.6012, 4.14755, 4.14755, 19.6012, -0.491861, 0.222034, -1.09767, 4.14755, 4.14755, -1.09767, 0.222034, 0.222034, 19.6012, 4.14755, 4.14755, 19.6012, 0.222034, 1.29288, -1.09767, 3.7906, 3.7906, -1.09767, 1.29288)
@@ -29,7 +29,7 @@ points = PackedVector3Array(-1.56305, -1.09781, -3.70362, -0.134983, -2.52515, -
 [node name="BottleGlasswareBoilingTubeLarge" type="RigidBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_jtfkd")
+mesh = ExtResource("1_riwq2")
 
 [node name="@CollisionShape3D@57954" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_eoate")
