@@ -7,11 +7,15 @@ extends Node
 @export var hop_factor : float
 
 var input : int
-var amount : float
 var syphoning : bool
 var cap_in : bool;
 
+var storage_node;
+
 var contact_cnt : int
+
+var rng = RandomNumberGenerator.new();
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,19 +23,23 @@ func _ready():
 	self.contact_monitor = true;
 	self.max_contacts_reported  = 2;
 	contact_cnt = 0;
-	amount = 10;
 	cap_in = false;
+	storage_node = get_node("./Storage");
 	return
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	syphoning = Input.is_action_pressed("syphon");
 	if syphoning:
-		amount += syphon_factor * delta;
-		print("syphoning... " + str(amount));
-	return
+		var amount = syphon_factor * delta;
+		var el = rng.randi() % 2;
+		var syphoned_amount = storage_node.syphon(el, amount);
+		if (syphoned_amount == 0): print("full!");
+		else: print("syphoning... (" + GameMaster.Elements.keys()[el] + " : " + str(amount) + ")");
+	return;
 	
 func lerp(start, end, delta):
-	return start + ((end - start) * delta)
+	return start + ((end - start) * delta);
+	
 func _integrate_forces(state):
 	# ---- Movement
 	# -- Rotation
@@ -39,13 +47,12 @@ func _integrate_forces(state):
 	var grav_mag : int = ProjectSettings.get_setting("physics/2d/default_gravity");
 	var forward = self.transform.basis.y;
 	if Input.is_action_pressed("move_right"): rot = -1;
-	elif Input.is_action_pressed("move_left"): rot = 1
+	elif Input.is_action_pressed("move_left"): rot = 1;
 	# Apply
-	state.angular_velocity.z = lerp(state.angular_velocity.z, rot * (grav_mag * 0.1 * rot_speed * state.step), 0.2)
+	state.angular_velocity.z = lerp(state.angular_velocity.z, rot * (grav_mag * 0.1 * rot_speed * state.step), 0.2);
 	
 	# -- Cap
 	if Input.is_action_just_released("cap_toggle"):
-		print("cap!");
 		var anim_node = get_node("./AnimationPlayer");
 		print(anim_node.is_playing());
 		if (not anim_node.is_playing()):
@@ -57,16 +64,19 @@ func _integrate_forces(state):
 	
 	# -- Release/Propulsion
 	if !syphoning and Input.is_action_pressed("release"):
-		if (amount <= 0):
-			amount = 0;
-			print("empty!");
+		var release_arr = storage_node.release_next(release_factor * state.step);
+		if (len(release_arr) == 0): print("empty!");
 		else:
-			amount -= release_factor * state.step;
-			print("releasing... " + str(amount));
+			var prnts = "releasing: ";
+			for portion in release_arr:
+				prnts += "(" +  GameMaster.Elements.keys()[portion.element] + " : " + str(portion.amount) + ") ,";
+			print(prnts);
 			forward = self.transform.basis.y;
 			state.apply_force(forward * grav_mag * propulsion_speed * state.step, Vector3(0, 0, -0.1));
 	return
+	
 
+# ------  Signals  ------
 func _on_cap_area_body_entered(body):
 	contact_cnt += 1;
 	return;

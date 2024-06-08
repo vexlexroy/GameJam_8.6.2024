@@ -12,7 +12,7 @@ rot_speed = 1.5
 propulsion_speed = 5.0
 syphon_factor = 2.0
 release_factor = 0.5
-hop_factor = 1.2
+hop_factor = 1.3
 
 [node name="Counter2" parent="." instance=ExtResource("2_lmcog")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -34, 0)

@@ -113,7 +113,7 @@ shape = SubResource("ConvexPolygonShape3D_gt68u")
 
 [node name="Storage" type="Node" parent="."]
 script = ExtResource("4_0ww7r")
-max_amount = 10.0
+max_amount = null
 
 [connection signal="body_entered" from="CapArea" to="." method="_on_cap_area_body_entered"]
 [connection signal="body_exited" from="CapArea" to="." method="_on_cap_area_body_exited"]
