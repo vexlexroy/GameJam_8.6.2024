@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3gu7d7r8ryce"]
+
+[ext_resource type="Shader" uid="uid://qypcygidicqv" path="res://assets/Shaders/he.tres" id="1_w353m"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fttnt"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bn27y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvuyn"]
+render_priority = 0
+shader = ExtResource("1_w353m")
+
+[node name="He" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_fttnt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CylinderMesh_bn27y")
+surface_material_override/0 = SubResource("ShaderMaterial_cvuyn")
