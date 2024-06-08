@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dflod6dc7gejj"]
+[gd_scene load_steps=4 format=3 uid="uid://dflod6dc7gejj"]
 
+[ext_resource type="Script" path="res://assets/scripts/Character_Controller.gd" id="1_7c755"]
 [ext_resource type="ArrayMesh" uid="uid://b56xpkcq8yamk" path="res://assets/3Dmodels/Pen_models/pen_cylinder.res" id="1_f31ql"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_crn6f"]
+points = PackedVector3Array(0.475775, 7.19634, 0.468893, -1.12624, -7.75799, -0.599393, -0.85906, -9.36084, -0.599393, 0.742951, 5.05977, -1.13354, 1.54448, -7.75799, 0.468893, -0.85906, 5.32746, 1.00304, -0.85906, -7.75799, 1.00304, -1.12624, 5.32746, -0.599393, 0.742951, -7.75799, -1.13354, 0.742951, 5.32746, 1.00304, -0.591884, 5.32746, -1.13354, 1.54448, -3.48485, -0.332112, 0.742951, -9.36084, 0.735964, -0.591884, -7.75799, -1.13354, 1.00987, 5.86119, 0.468893, 0.742951, -7.75799, 1.00304, -1.12624, 5.32746, 0.468893, -0.591884, 7.19634, -0.332112, 0.475775, -9.36084, -0.866464, -1.12624, -7.75799, 0.468893, 1.54448, -7.75799, -0.332112, -0.324969, -9.62854, 0.735964, 0.475775, 7.46404, -0.332112, 1.00987, 5.05977, -0.866464, 1.54448, -3.48485, 0.468893, -0.324969, 7.46404, 0.468893, 0.742951, -9.62854, -0.332112, -0.85906, -9.36084, 0.468893, -0.324969, 7.19634, -0.599393, -0.591884, -9.62854, -0.599393, 1.00987, 5.86119, -0.332112, 0.475775, 5.86119, 1.00304)
+
 [node name="PenCharacter" type="CharacterBody3D"]
+script = ExtResource("1_7c755")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_f31ql")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_crn6f")
