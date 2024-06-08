@@ -1,7 +1,6 @@
-[gd_scene load_steps=44 format=3 uid="uid://cx3y66s3v1s5j"]
+[gd_scene load_steps=43 format=3 uid="uid://daxbg1aa1f8er"]
 
 [ext_resource type="Script" path="res://assets/scripts/h_2o.gd" id="1_tx6pr"]
-[ext_resource type="Script" path="res://assets/scripts/UIElements.gd" id="2_i1qun"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ty5wp"]
 
@@ -372,6 +371,7 @@ shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
 
 [node name="H2O" type="Area3D"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+collision_mask = 16
 script = ExtResource("1_tx6pr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -383,7 +383,6 @@ transparency = 0.79
 cast_shadow = 0
 extra_cull_margin = 5074.69
 mesh = SubResource("BoxMesh_a0xaw")
-script = ExtResource("2_i1qun")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
