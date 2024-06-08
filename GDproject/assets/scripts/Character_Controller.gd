@@ -14,8 +14,6 @@ var storage_node;
 
 var contact_cnt : int
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.contact_monitor = true;
@@ -24,17 +22,29 @@ func _ready():
 	cap_in = false;
 	storage_node = get_node("./Storage");
 	return
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+# TEST
+var cnt = 0;
+var timer = 0;
+# TEST
 func _process(delta):
 	syphoning = Input.is_action_pressed("syphon");
-	if syphoning:
-		var amount = syphon_factor * delta;
-		var el = 0;  # TODO: Get element depending on environment
-		var _syphoned_amount = storage_node.syphon(el, amount);
-		#if (syphoned_amount == 0): print("full!");
-		#else: print("syphoning... (" + GameMaster.Elements.keys()[el] + " : " + str(amount) + ")");
+	if syphoning and timer <= 0:
+		# TEST
+		var _syphoned_amount = storage_node.syphon(cnt % 2, 2.0);
+		cnt += 1;
+		timer = 2;
+		# TEST
+		#var amount = syphon_factor * delta;
+		#var el = 0; # TODO: Get element depending on environment
+		#var _syphoned_amount = storage_node.syphon(el, amount);
+	# TEST
+	if (timer > 0):
+		timer -= delta;
+	# TEST
 	return;
-	
+# TEST
+
 func lerp(start, end, delta):
 	return start + ((end - start) * delta);
 	
