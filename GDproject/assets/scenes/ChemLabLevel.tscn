@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=24 format=3 uid="uid://rn6x8570uam"]
 
 [ext_resource type="PackedScene" uid="uid://cqakvtbvxnhqx" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
 [ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://d1uprfrwuhucf" path="res://assets/scenes/Environment/mouse.tscn" id="17_13nxh"]
 [ext_resource type="PackedScene" uid="uid://bhmy5a4f8ai7u" path="res://assets/scenes/Environment/chair.tscn" id="18_kq5us"]
 [ext_resource type="PackedScene" uid="uid://crgkmgw562exl" path="res://assets/scenes/Environment/ppegownfolded.tscn" id="19_4flg6"]
+[ext_resource type="PackedScene" uid="uid://npv5wbcwqa6f" path="res://assets/scenes/Environment/cabinet.tscn" id="20_oir3q"]
+[ext_resource type="PackedScene" uid="uid://cwcmqmjijtpc8" path="res://assets/scenes/Environment/cabinetdouble.tscn" id="21_qdauq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
 size = Vector3(5000, 2, 500)
@@ -157,12 +159,6 @@ transform = Transform3D(0.809886, 0.586308, -0.0181355, 0.255205, -0.380024, -0.
 [node name="Counter2_9" parent="." instance=ExtResource("3_fuinu")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1439.24, 35, -1.57696)
 
-[node name="Counter2_10" parent="." instance=ExtResource("3_fuinu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1377.37, 35, -1.57696)
-
-[node name="Counter2_11" parent="." instance=ExtResource("3_fuinu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1316.66, 35, -1.57696)
-
 [node name="Counter2_12" parent="." instance=ExtResource("3_fuinu")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1254.79, 35, -1.57696)
 
@@ -177,3 +173,30 @@ transform = Transform3D(-0.995573, 0, -0.0939865, 0, 1, 0, 0.0939865, 0, -0.9955
 
 [node name="ppegownfolded3" parent="." instance=ExtResource("19_4flg6")]
 transform = Transform3D(-0.411403, 0, -0.911454, 0, 1, 0, 0.911454, 0, -0.411403, -1498.43, 22.3551, 0.34967)
+
+[node name="ppegownfolded4" parent="." instance=ExtResource("19_4flg6")]
+transform = Transform3D(0.00601997, 0.749464, -0.662017, -0.00681488, 0.662045, 0.749433, 0.999959, 0, 0.009093, -1393.51, 18.3287, -7.07442)
+
+[node name="ppegownfolded5" parent="." instance=ExtResource("19_4flg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1439.4, 36.9887, 0.264892)
+
+[node name="ppegownfolded6" parent="." instance=ExtResource("19_4flg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1439.77, 1, -1.81456)
+
+[node name="ppegownfolded7" parent="." instance=ExtResource("19_4flg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1439.66, 48.535, 0.278862)
+
+[node name="Cabinet" parent="." instance=ExtResource("20_oir3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1439.11, 69, -38)
+
+[node name="Cabinet2" parent="." instance=ExtResource("20_oir3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1439.11, 130.822, -38)
+
+[node name="cabinetdouble" parent="." instance=ExtResource("21_qdauq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1255.15, 69.0663, -38.7791)
+
+[node name="cabinetdouble2" parent="." instance=ExtResource("21_qdauq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1255.15, 131.144, -38.7791)
+
+[node name="Book_003" parent="." instance=ExtResource("5_gi74s")]
+transform = Transform3D(0.615321, -10.3371, -22.7544, 0.279433, 22.7628, -10.3334, 24.9909, -1.38778e-15, 0.675797, -1461.24, 142.588, -24.1669)
