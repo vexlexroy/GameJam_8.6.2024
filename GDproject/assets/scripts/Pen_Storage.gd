@@ -42,7 +42,6 @@ func _process(delta):
 
 func syphon(element : GameMaster.Elements, amount : float = 1):
 	var ret = add_element(element, amount);
-	#print_storage();
 	return ret;
 func release_next(amount : float = 1) -> Array:
 	if (current_amount == 0 or len(element_stack) == 0):
@@ -60,15 +59,11 @@ func release_next(amount : float = 1) -> Array:
 			UI_node.Remove_last_item();
 		elif (last_portion.amount > amount):
 			portions_released.append(Portion.new(last_portion.element, amount));
-			UI_node.Update_last_item(element_stack[-1].amount);
 			element_stack[-1].amount -= amount;
 			current_amount -= amount;
 			break;
 	if (current_amount < 0): current_amount = 0;
-	# TODO: Update UI
-	
-	# END
-	#print_storage();
+	elif (current_amount > 0): UI_node.Update_last_item(element_stack[-1].amount);
 	return portions_released;
 
 func print_storage():
@@ -85,11 +80,11 @@ func add_element(element : GameMaster.Elements, amount : float = 1) -> float:
 		amount = max - current_amount;
 	if (len(element_stack) > 0 and element_stack[-1].element == element):
 		element_stack[-1].amount += amount;
+		current_amount += amount;
 		UI_node.Update_last_item(element_stack[-1].amount);
 	else:
 		var new_portion = Portion.new(element, amount);
 		element_stack.append(new_portion);
 		UI_node.Add_item(new_portion);
-	current_amount += amount;
-	# TODO: Update UI
+		current_amount += amount;
 	return amount;
