@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=5 format=3 uid="uid://rn6x8570uam"]
+
+[ext_resource type="PackedScene" uid="uid://dsy1c7pfkdkcv" path="res://assets/3Dmodels/Furniture/Counters/counter_counter_2_shelves.glb" id="1_ufapk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
+size = Vector3(5000, 2, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tiqdc"]
+size = Vector3(5000, 2, 500)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kq4s0"]
+size = Vector3(62, 68, 60)
 
 [node name="ChemLabLevel" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_6i27s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_tiqdc")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="Low Poly - Lab Assets" parent="StaticBody3D2" instance=ExtResource("1_ufapk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 35, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 35, 1)
+shape = SubResource("BoxShape3D_kq4s0")
