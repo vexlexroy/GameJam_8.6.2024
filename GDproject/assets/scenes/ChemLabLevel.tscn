@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=31 format=3 uid="uid://rn6x8570uam"]
 
 [ext_resource type="PackedScene" uid="uid://cqakvtbvxnhqx" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
 [ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
@@ -19,12 +19,13 @@
 [ext_resource type="PackedScene" path="res://assets/scenes/Environment/mouse.tscn" id="17_13nxh"]
 [ext_resource type="PackedScene" path="res://assets/scenes/Environment/chair.tscn" id="18_kq5us"]
 [ext_resource type="PackedScene" path="res://assets/scenes/Environment/ppegownfolded.tscn" id="19_4flg6"]
-[ext_resource type="PackedScene" uid="uid://khivco66yyt8" path="res://assets/scenes/Environment/dish_evaporating.tscn" id="20_hqo3p"]
-[ext_resource type="PackedScene" uid="uid://bnxj026u7me2s" path="res://assets/scenes/Environment/dish_watch_glass.tscn" id="21_4ivkq"]
-[ext_resource type="PackedScene" uid="uid://cx3y66s3v1s5j" path="res://assets/scenes/h_2o.tscn" id="22_16i88"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Environment/heating_equipment_crucible.tscn" id="23_11vwx"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Environment/dish_evaporating.tscn" id="20_hqo3p"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Environment/dish_watch_glass.tscn" id="21_4ivkq"]
+[ext_resource type="PackedScene" uid="uid://daxbg1aa1f8er" path="res://assets/scenes/h_2o.tscn" id="22_16i88"]
+[ext_resource type="PackedScene" uid="uid://pe16nlbn6msi" path="res://assets/scenes/Environment/heating_equipment_crucible.tscn" id="23_11vwx"]
 [ext_resource type="PackedScene" path="res://assets/scenes/Environment/cabinetdouble.tscn" id="24_bk3hv"]
 [ext_resource type="PackedScene" path="res://assets/scenes/h_2o_r.tscn" id="25_56mev"]
+[ext_resource type="PackedScene" path="res://assets/scenes/he.tscn" id="26_mevde"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
 size = Vector3(5000, 2, 500)
@@ -489,3 +490,21 @@ transform = Transform3D(0.864205, 0, -0.503141, 0, 1, 0, 0.503141, 0, 0.864205, 
 
 [node name="H2O3" parent="." instance=ExtResource("25_56mev")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -1418.83, 71.9428, 3.07117)
+
+[node name="DishEvaporating3" parent="." instance=ExtResource("20_hqo3p")]
+transform = Transform3D(0.528172, 0, -0.849138, 0, 1, 0, 0.849138, 0, 0.528172, -473.851, 1.88672, 3.73004)
+
+[node name="DishEvaporating4" parent="." instance=ExtResource("20_hqo3p")]
+transform = Transform3D(0.778244, -6.80362e-08, -0.627963, -8.74228e-08, -1, 0, -0.627963, 5.48983e-08, -0.778244, -463.987, 1.88672, -9.48136)
+
+[node name="DishEvaporating5" parent="." instance=ExtResource("20_hqo3p")]
+transform = Transform3D(0.514438, -0.537093, -0.668494, -0.381729, -0.841492, 0.382329, -0.767879, 0.0584989, -0.63792, -456.614, 4.49138, -9.48136)
+
+[node name="H2O4" parent="." instance=ExtResource("25_56mev")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -473.831, 3.12852, 3.07117)
+
+[node name="He" parent="." instance=ExtResource("26_mevde")]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, -20, 0, 20, -8.74228e-07, -865.833, 79.6159, -5.26)
+
+[node name="MachineCalculatorLarge4" parent="." instance=ExtResource("1_fx3pe")]
+transform = Transform3D(0.0607698, 0, -0.998152, 0, 1, 0, 0.998152, 0, 0.0607698, -251.723, 85.7092, 2.2586)
