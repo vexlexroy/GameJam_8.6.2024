@@ -109,7 +109,7 @@ func set_outline(value : bool):
 # ------  Element effects  ------
 func light_weight_percent_update(total : float):
 	self.gravity_scale = 1 * total;
-	print("grav scale = " + str(self.gravity_scale));
+	#print("grav scale = " + str(self.gravity_scale));
 	return;
 # Water
 func fell_in_water(): in_water = true;

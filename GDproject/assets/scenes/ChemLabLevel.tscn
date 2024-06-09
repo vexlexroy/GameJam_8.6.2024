@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=31 format=3 uid="uid://rn6x8570uam"]
 
 [ext_resource type="PackedScene" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
 [ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
@@ -23,11 +23,9 @@
 [ext_resource type="PackedScene" path="res://assets/scenes/Environment/dish_watch_glass.tscn" id="21_4ivkq"]
 [ext_resource type="PackedScene" uid="uid://daxbg1aa1f8er" path="res://assets/scenes/h_2o.tscn" id="22_16i88"]
 [ext_resource type="PackedScene" uid="uid://pe16nlbn6msi" path="res://assets/scenes/Environment/heating_equipment_crucible.tscn" id="23_11vwx"]
-[ext_resource type="PackedScene" uid="uid://cwcmqmjijtpc8" path="res://assets/scenes/Environment/cabinetdouble.tscn" id="24_bk3hv"]
-[ext_resource type="PackedScene" uid="uid://463f8t8tk6tv" path="res://assets/scenes/h_2o_r.tscn" id="25_56mev"]
-[ext_resource type="PackedScene" uid="uid://b3gu7d7r8ryce" path="res://assets/scenes/he.tscn" id="26_mevde"]
-[ext_resource type="Texture2D" uid="uid://dbk0gaqqms04u" path="res://assets/Icons/MadScientist.jpg" id="27_ar20p"]
-[ext_resource type="Texture2D" uid="uid://dyiidg0lb1o1f" path="res://assets/Icons/periodictable.png" id="28_fo03a"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Environment/cabinetdouble.tscn" id="24_bk3hv"]
+[ext_resource type="PackedScene" path="res://assets/scenes/h_2o_r.tscn" id="25_56mev"]
+[ext_resource type="PackedScene" path="res://assets/scenes/he.tscn" id="26_mevde"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
 size = Vector3(5000, 2, 500)
@@ -40,18 +38,6 @@ data = PackedVector3Array(-250, 150, 0.5, 250, 150, 0.5, -250, -150, 0.5, 250, 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_jp7r8"]
 size = Vector3(500, 300, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_u1i6f"]
-size = Vector2(150, 150)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hstpu"]
-albedo_texture = ExtResource("27_ar20p")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_0c4em"]
-size = Vector2(160, 100)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7wlm"]
-albedo_texture = ExtResource("28_fo03a")
 
 [node name="ChemLabLevel" type="Node3D"]
 
@@ -570,34 +556,3 @@ transform = Transform3D(20, 0, 0, 0, -8.74228e-07, -20, 0, 20, -8.74228e-07, -86
 
 [node name="MachineCalculatorLarge4" parent="." instance=ExtResource("1_fx3pe")]
 transform = Transform3D(0.0607698, 0, -0.998152, 0, 1, 0, 0.998152, 0, 0.0607698, -251.723, 85.7092, 2.2586)
-
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(0.947467, -1.39812e-08, -0.319852, -0.319852, -4.14151e-08, -0.947467, 0, 1, -4.37114e-08, -1111.15, 149.163, -38.7221)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5816, -1.73621, -24.4933)
-mesh = SubResource("PlaneMesh_u1i6f")
-surface_material_override/0 = SubResource("StandardMaterial3D_hstpu")
-
-[node name="Node3D2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2257.26, 150, -39.3008)
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D2"]
-transform = Transform3D(0.999983, 2.55573e-10, 0.00584682, -2.55573e-10, 1, -7.4607e-13, -0.00584682, -7.4607e-13, 0.999983, -86.5195, 2.28882e-05, 20.8698)
-mesh = SubResource("PlaneMesh_0c4em")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_r7wlm")
-
-[node name="Node3D3" type="Node3D" parent="."]
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D3"]
-transform = Transform3D(0.999291, -1.6452e-09, -0.0376379, -0.0376379, -4.36804e-08, -0.999291, 0, 1, -4.37114e-08, -1395.15, 146.653, -39.5431)
-mesh = SubResource("PlaneMesh_0c4em")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_r7wlm")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D3"]
-transform = Transform3D(0.96263, 1.18379e-08, 0.270819, 0.270819, -4.20779e-08, -0.96263, 0, 1, -4.37114e-08, -771.371, 146.653, -39.5431)
-mesh = SubResource("PlaneMesh_0c4em")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_r7wlm")
