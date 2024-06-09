@@ -44,8 +44,9 @@ func _process(delta):
 		var el = 0;
 		if (in_water): el = GameMaster.Elements["H2O"];
 		elif (in_helium): el = GameMaster.Elements["He"];
-		print(el);
 		var _syphoned_amount = storage_node.syphon(el, amount);
+	if Input.is_action_just_released("reset_level"):
+		get_tree().change_scene_to_file("res://assets/scenes/Main.tscn")
 	return;
 
 func lerp(start, end, delta):
