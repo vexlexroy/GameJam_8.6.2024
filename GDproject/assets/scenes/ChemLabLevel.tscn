@@ -300,7 +300,7 @@ transform = Transform3D(-19.9632, 0.957057, 0.745333, -1.15966, -11.4516, -16.35
 transform = Transform3D(-2.96984, -19.2229, -4.6539, -8.18392, 5.47866, -17.4071, 18.0056, -0.680455, -8.67949, -1552.72, 21.6888, 9.89351)
 
 [node name="Chair3" parent="." instance=ExtResource("18_kq5us")]
-transform = Transform3D(-16.3932, 4.77719, -10.4135, 11.1789, 2.68885, -16.3647, -2.50885, -19.234, -4.87413, -845.948, 27.5712, 60.5406)
+transform = Transform3D(-16.4866, -0.335011, -11.3172, 11.1789, 2.68885, -16.3647, 1.79563, -19.8156, -2.02924, -834.146, 27.5712, 60.5406)
 
 [node name="book_06" parent="." instance=ExtResource("11_jevhs")]
 transform = Transform3D(0.646963, 0, 0.762522, 0, 1, 0, -0.762522, 0, 0.646963, -2025.59, 1, 84.4983)
@@ -341,6 +341,18 @@ transform = Transform3D(0.528172, 0, -0.849138, 0, 1, 0, 0.849138, 0, 0.528172, 
 [node name="dish_watch_glass" parent="." instance=ExtResource("21_4ivkq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1426.38, 69.5343, -19.0958)
 
+[node name="dish_watch_glass4" parent="." instance=ExtResource("21_4ivkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1337.64, 0.0475235, -19.0958)
+
+[node name="dish_watch_glass5" parent="." instance=ExtResource("21_4ivkq")]
+transform = Transform3D(0.843947, -0.106038, -0.525842, 0.0899982, 0.994362, -0.0560756, 0.528824, 0, 0.848732, -1327.77, 0.113577, 18.1072)
+
+[node name="dish_watch_glass6" parent="." instance=ExtResource("21_4ivkq")]
+transform = Transform3D(0.0085183, 0.0935999, -0.995573, -0.0902314, -0.991476, -0.0939867, -0.995884, 0.0906326, -4.44634e-08, -1336.75, 1.37847, 18.9191)
+
+[node name="dish_watch_glass3" parent="." instance=ExtResource("21_4ivkq")]
+transform = Transform3D(0.996269, -0.0863038, 0, 0.0863038, 0.996269, 0, 0, 0, 1, -1402.81, 49.4487, 2.98015)
+
 [node name="Monitor2" parent="." instance=ExtResource("15_k4632")]
 transform = Transform3D(0.985158, 0.171518, 0.00673772, -0.0253665, 0.106651, 0.993973, 0.169766, -0.979391, 0.109419, -1205.64, 72.8546, 32.0328)
 
@@ -375,22 +387,25 @@ transform = Transform3D(24.9098, 2.08271, -0.403766, -0.334146, -0.846937, -24.9
 transform = Transform3D(0.887598, 0, -0.460618, 0, 1, 0, 0.460618, 0, 0.887598, -240.065, 70.194, 0.279986)
 
 [node name="book__013" parent="." instance=ExtResource("12_e7853")]
-transform = Transform3D(21.1449, 13.3174, -0.734267, -0.334146, -0.846937, -24.9834, -13.3335, 21.1407, -0.538337, -1081.11, 12.0759, 3.71223)
+transform = Transform3D(21.1449, 13.3174, -0.734267, -0.334146, -0.846937, -24.9834, -13.3335, 21.1407, -0.538337, -1081.11, 12.0759, -5.84398)
 
 [node name="book_14" parent="." instance=ExtResource("11_jevhs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1073.42, 2.42126, 10.2937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1073.42, 2.42126, 0.737487)
+
+[node name="book_18" parent="." instance=ExtResource("11_jevhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1046.14, 2.42126, 0.737487)
 
 [node name="book_16" parent="." instance=ExtResource("11_jevhs")]
-transform = Transform3D(0.992287, 0.123965, 0, -0.123965, 0.992287, 0, 0, 0, 1, -1063.57, 27.0394, 10.2937)
+transform = Transform3D(0.992287, 0.123965, 0, -0.123965, 0.992287, 0, 0, 0, 1, -1063.57, 27.0394, 0.737487)
 
 [node name="book__014" parent="." instance=ExtResource("12_e7853")]
-transform = Transform3D(13.0039, 7.69439, -19.9172, -16.6768, -10.9026, -15.1002, -13.3335, 21.1407, -0.538337, -1081.91, 35.4668, 3.71223)
+transform = Transform3D(13.0039, 7.69439, -19.9172, -16.6768, -10.9026, -15.1002, -13.3335, 21.1407, -0.538337, -1081.91, 35.4668, -5.84398)
 
 [node name="book_15" parent="." instance=ExtResource("11_jevhs")]
-transform = Transform3D(0.627297, 0.77878, 0, -0.77878, 0.627297, 0, 0, 0, 1, -1084.61, 23.4216, 10.2937)
+transform = Transform3D(0.627297, 0.77878, 0, -0.77878, 0.627297, 0, 0, 0, 1, -1084.61, 23.4216, 0.737487)
 
 [node name="book__015" parent="." instance=ExtResource("12_e7853")]
-transform = Transform3D(-1.07523, -1.09177e-06, -24.9768, -24.9769, 4.69995e-08, 1.07523, 1.10247e-14, 25, -1.09278e-06, -1056.51, 15.493, 3.71223)
+transform = Transform3D(-6.20964, -1.05854e-06, -24.2165, -24.2165, 2.71432e-07, 6.20963, 1.65707e-14, 25, -1.09278e-06, -1057.7, 15.1966, -5.91265)
 
 [node name="book_08" parent="." instance=ExtResource("11_jevhs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -964.238, 89.7091, 3.80054)
