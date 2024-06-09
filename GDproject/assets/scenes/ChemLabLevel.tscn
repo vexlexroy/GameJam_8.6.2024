@@ -177,6 +177,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31.1806)
 mesh = SubResource("PlaneMesh_4jylc")
 surface_material_override/0 = SubResource("StandardMaterial3D_yovlu")
 
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -367.844, 148.526, -37.0755)
+
 [node name="Lights" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 80)
 
