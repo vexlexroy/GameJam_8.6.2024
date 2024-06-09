@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/he.gd" id="1_fp5ej"]
 [ext_resource type="Shader" uid="uid://qypcygidicqv" path="res://assets/Shaders/he.tres" id="1_w353m"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_fttnt"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_i7f5s"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bn27y"]
 
@@ -15,7 +15,7 @@ shader = ExtResource("1_w353m")
 script = ExtResource("1_fp5ej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_fttnt")
+shape = SubResource("CylinderShape3D_i7f5s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 mesh = SubResource("CylinderMesh_bn27y")
