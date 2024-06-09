@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dflod6dc7gejj"]
+[gd_scene load_steps=13 format=3 uid="uid://dflod6dc7gejj"]
 
 [ext_resource type="Script" path="res://assets/scripts/Character_Controller.gd" id="1_7c755"]
 [ext_resource type="ArrayMesh" uid="uid://fictiordne7r" path="res://assets/3Dmodels/Pen_models/pen_pen.res" id="2_alnbb"]
 [ext_resource type="ArrayMesh" uid="uid://7j75h0velfky" path="res://assets/3Dmodels/Pen_models/pen_cap.res" id="3_wpf2n"]
 [ext_resource type="Script" path="res://assets/scripts/Pen_Storage.gd" id="4_0ww7r"]
+[ext_resource type="Texture2D" uid="uid://bqtms5cwjweu5" path="res://assets/Icons/PenBodyOutline.png" id="4_i368a"]
+[ext_resource type="Texture2D" uid="uid://g0bu83w0020e" path="res://assets/Icons/CapOutline.png" id="5_lbdn2"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a8otl"]
 points = PackedVector3Array(0.539347, 6.74106, 0.531794, -1.11055, -7.63665, -0.646168, -1.11055, -7.63665, 0.531794, 1.48218, -7.63665, -0.1749, -0.639007, 5.09021, -1.11764, -1.11055, 5.32647, 0.531794, 0.774866, -7.63665, 1.00327, 0.539347, 5.09021, -1.11764, 0.539347, -7.63665, -1.11764, 1.01064, 5.09021, 0.767428, -0.639007, 5.32647, 1.00327, 1.01064, 5.32647, -0.646168, -0.403234, 7.44835, -0.410534, 1.48218, -3.62914, 0.531794, -0.639007, -7.63665, 1.00327, -1.11055, 5.09021, -0.646168, -0.639007, -7.63665, -1.11764, 0.774866, 5.09021, 1.00327, -0.403234, 7.21209, 0.531794, 0.303575, 7.44835, -0.410534, 1.48218, -7.63665, 0.531794, 1.48218, -3.62914, -0.1749, 0.539347, 7.21209, 0.29616, 1.01064, 5.56125, 0.531794, 0.303575, 6.97584, -0.646168, 0.539347, 5.56125, 1.00327, -0.639007, 6.97584, 0.29616, 0.303575, 7.21209, 0.531794, -0.403234, 5.32647, -1.11764, 0.539347, 7.21209, -0.1749, -1.11055, 5.32647, -0.410534, 0.774866, 5.56125, -0.881802)
@@ -34,6 +36,13 @@ tracks/2/path = NodePath("CapCollider")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = PackedFloat32Array(0, 1, 0, -7.5, 0, 0.5, 1, 0, -6.4, 0)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PenOutline/CapOutline")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.023, -3.142, 0, 0.5, 1, -0.023, -2.75, 0)
 
 [sub_resource type="Animation" id="Animation_qe4s2"]
 resource_name = "pen_click_out"
@@ -59,6 +68,13 @@ tracks/2/path = NodePath("CapCollider")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = PackedFloat32Array(0, 1, 0, -6.4, 0, 0.5, 1, 0, -7.5, 0)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PenOutline/CapOutline")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, -2.75, 0, 0.5, 1, 0, -3.142, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ma3nk"]
 _data = {
@@ -111,6 +127,16 @@ shape = SubResource("ConvexPolygonShape3D_gt68u")
 [node name="CapCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
 shape = SubResource("ConvexPolygonShape3D_gt68u")
+
+[node name="PenOutline" type="Sprite3D" parent="."]
+transform = Transform3D(2.11388, 0, 0, 0, 2.72483, 0, 0, 0, 1, 0.0837402, 0.0619965, 0)
+layers = 32
+texture = ExtResource("4_i368a")
+
+[node name="CapOutline" type="Sprite3D" parent="PenOutline"]
+transform = Transform3D(1.09504, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.142, 0)
+layers = 32
+texture = ExtResource("5_lbdn2")
 
 [node name="Storage" type="Node" parent="."]
 script = ExtResource("4_0ww7r")
