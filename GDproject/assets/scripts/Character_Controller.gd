@@ -17,6 +17,8 @@ var syphoning : bool
 var cap_in : bool;
 
 var storage_node;
+var pen_outline_node : Node;
+var cap_outline_node : Node;
 
 var contact_cnt : int
 
@@ -29,6 +31,9 @@ func _ready():
 	contact_cnt = 0;
 	cap_in = false;
 	storage_node = get_node("./Storage");
+	pen_outline_node = get_node("./PenOutline");
+	cap_outline_node = get_node("./PenOutline/CapOutline");
+	set_outline(false);
 	return
 
 # TEST
@@ -38,22 +43,9 @@ var timer = 0;
 func _process(delta):
 	syphoning = Input.is_action_pressed("syphon");
 	if syphoning:
-		"""
-		# TEST
-		var _syphoned_amount = storage_node.syphon(cnt % 2, 2.0);
-		cnt += 1;
-		timer = 2;
-		# TEST
-		"""
 		var amount = syphon_factor * delta;
 		var el = 3 if in_water else 0; # TODO: Get element depending on environment
 		var _syphoned_amount = storage_node.syphon(el, amount);
-	"""
-	# TEST
-	if (timer > 0):
-		timer -= delta;
-	# TEST
-	"""
 	return;
 # TEST
 
@@ -110,9 +102,18 @@ func average_prop_factor(portions : Array):
 	return float(res) / float(sum);
 
 
-# ------  Phase switches  ------
+func set_outline(value : bool):
+	pen_outline_node.visible = !value;
+	cap_outline_node.visible = !value;
+	return;
+
+# ------  Element effects  ------
+# Water
 func fell_in_water(): in_water = true;
 func exited_water(): in_water = false;
+# Helium
+func helium_percent_update(helium_percent : float):
+	self.gravity_scale = 1 - (helium_percent * 0.5); return;
 
 
 # ------  Signals  ------

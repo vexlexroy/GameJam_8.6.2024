@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhuxt4ajbm5ia"]
+[gd_scene load_steps=4 format=3 uid="uid://bhuxt4ajbm5ia"]
 
 [ext_resource type="Script" path="res://assets/scripts/UIElements.gd" id="1_3nmx8"]
 [ext_resource type="Texture2D" uid="uid://d0vgj058uoky" path="res://assets/UIelements/pen.png" id="2_mstkl"]
-[ext_resource type="Texture2D" path="res://assets/Icons/Blank.png" id="2_rajib"]
 [ext_resource type="LabelSettings" uid="uid://dp5mequk1djuu" path="res://assets/UI/Element_UI_Name.tres" id="3_q13ik"]
 
 [node name="Storage_UI" type="Control"]
@@ -25,7 +24,6 @@ alignment = 2
 
 [node name="_Template" type="Sprite2D" parent="StackOfElements"]
 scale = Vector2(0.234, 0.1)
-texture = ExtResource("2_rajib")
 centered = false
 
 [node name="TextParent" type="Node2D" parent="StackOfElements/_Template"]
@@ -33,29 +31,6 @@ rotation = 3.14159
 scale = Vector2(4.274, 10)
 
 [node name="RichTextLabel" type="Label" parent="StackOfElements/_Template/TextParent"]
-modulate = Color(0.00566115, 0.00566115, 0.00566115, 1)
-layout_direction = 3
-offset_left = -18.9998
-offset_top = -21.0
-offset_right = -1.99977
-offset_bottom = -4.0
-text = "- ."
-label_settings = ExtResource("3_q13ik")
-horizontal_alignment = 1
-vertical_alignment = 1
-text_direction = 1
-
-[node name="_Template2" type="Sprite2D" parent="StackOfElements"]
-position = Vector2(0, 30)
-scale = Vector2(0.234, 0.1)
-texture = ExtResource("2_rajib")
-centered = false
-
-[node name="TextParent" type="Node2D" parent="StackOfElements/_Template2"]
-rotation = 3.14159
-scale = Vector2(4.274, 10)
-
-[node name="RichTextLabel" type="Label" parent="StackOfElements/_Template2/TextParent"]
 modulate = Color(0.00566115, 0.00566115, 0.00566115, 1)
 layout_direction = 3
 offset_left = -18.9998
