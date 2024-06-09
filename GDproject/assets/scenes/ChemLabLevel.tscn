@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=30 format=3 uid="uid://rn6x8570uam"]
 
 [ext_resource type="PackedScene" uid="uid://cqakvtbvxnhqx" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
 [ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
@@ -21,9 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://crgkmgw562exl" path="res://assets/scenes/Environment/ppegownfolded.tscn" id="19_4flg6"]
 [ext_resource type="PackedScene" uid="uid://khivco66yyt8" path="res://assets/scenes/Environment/dish_evaporating.tscn" id="20_hqo3p"]
 [ext_resource type="PackedScene" uid="uid://bnxj026u7me2s" path="res://assets/scenes/Environment/dish_watch_glass.tscn" id="21_4ivkq"]
-[ext_resource type="PackedScene" uid="uid://cx3y66s3v1s5j" path="res://assets/scenes/h_2o.tscn" id="22_16i88"]
+[ext_resource type="PackedScene" uid="uid://daxbg1aa1f8er" path="res://assets/scenes/h_2o.tscn" id="22_16i88"]
 [ext_resource type="PackedScene" uid="uid://pe16nlbn6msi" path="res://assets/scenes/Environment/heating_equipment_crucible.tscn" id="23_11vwx"]
 [ext_resource type="PackedScene" uid="uid://cwcmqmjijtpc8" path="res://assets/scenes/Environment/cabinetdouble.tscn" id="24_bk3hv"]
+[ext_resource type="PackedScene" uid="uid://463f8t8tk6tv" path="res://assets/scenes/h_2o_r.tscn" id="25_56mev"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6i27s"]
 size = Vector3(5000, 2, 500)
@@ -135,24 +136,26 @@ mesh = SubResource("BoxMesh_jp7r8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 80)
 
 [node name="OmniLight3D1" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(-0.161604, 0, -0.986856, 0, 1, 0, 0.986856, 0, -0.161604, -2000, 0, 0)
+transform = Transform3D(-0.161604, 0, -0.986856, 0, 1, 0, 0.986856, 0, -0.161604, -2074.27, 29.4792, 0)
 light_color = Color(0.882353, 0.882353, 1, 1)
+light_energy = 2.293
+light_indirect_energy = 1.97
 shadow_enabled = true
 omni_range = 500.0
 omni_attenuation = 0.01
 omni_shadow_mode = 0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(-0.947768, 0, 0.318959, 0, 1, 0, -0.318959, 0, -0.947768, -1500, 0, 0)
-light_color = Color(0.901961, 0.901961, 1, 1)
+transform = Transform3D(-0.947769, 0, 0.318959, 0, 1, 0, -0.318959, 0, -0.947769, -1462.78, 0, 0)
+light_color = Color(0.552941, 0.901961, 1, 1)
 shadow_enabled = true
 omni_range = 500.0
 omni_attenuation = 0.01
 omni_shadow_mode = 0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(0.79653, 0, -0.604599, 0, 1, 0, 0.604599, 0, 0.79653, -1000, 0, 0)
-light_color = Color(0.921569, 0.921569, 1, 1)
+transform = Transform3D(0.79653, 0, -0.604599, 0, 1, 0, 0.604599, 0, 0.79653, -985.911, 0, 0)
+light_color = Color(0.52549, 0.921569, 0.878431, 1)
 shadow_enabled = true
 omni_range = 500.0
 omni_attenuation = 0.01
@@ -160,7 +163,7 @@ omni_shadow_mode = 0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(0.26892, 0, -0.963163, 0, 1, 0, 0.963163, 0, 0.26892, -500, 0, 0)
-light_color = Color(0.941176, 0.941176, 1, 1)
+light_color = Color(0.380392, 1, 0.388235, 1)
 shadow_enabled = true
 omni_range = 500.0
 omni_attenuation = 0.01
@@ -197,7 +200,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1721.
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1659.35, 35, -1.57696)
 
 [node name="FireExtinguisher" parent="." instance=ExtResource("4_mgl40")]
-transform = Transform3D(0.00209479, 0.644671, -0.764457, -0.00176654, 0.76446, 0.644668, 0.999996, 0, 0.00274022, -2204.79, 24.4879, -1.44347)
+transform = Transform3D(0.237034, 0.65418, -0.718236, -0.0125269, 0.741302, 0.671054, 0.97142, -0.150066, 0.183908, -2204.79, 24.4879, -2.90233)
 
 [node name="Book_001" parent="." instance=ExtResource("5_gi74s")]
 transform = Transform3D(25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, -2238.2, 3.23379, 0.318176)
@@ -483,3 +486,6 @@ transform = Transform3D(0.80212, 0, 0.597163, 0, 1, 0, -0.597163, 0, 0.80212, -1
 
 [node name="Keyboard5" parent="." instance=ExtResource("16_cu0db")]
 transform = Transform3D(0.864205, 0, -0.503141, 0, 1, 0, 0.503141, 0, 0.864205, -1183.13, 1, 0.0718918)
+
+[node name="H2O3" parent="." instance=ExtResource("25_56mev")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -1418.83, 71.9428, 3.07117)

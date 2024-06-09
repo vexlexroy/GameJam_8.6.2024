@@ -10,7 +10,7 @@
 [node name="Scene" type="Node3D"]
 
 [node name="PenCharacter" parent="." instance=ExtResource("1_0cjkb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2170.85, 100, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2496.05, 14.4658, 0)
 axis_lock_linear_z = true
 rot_speed = 1.5
 syphon_factor = 8.0
