@@ -151,7 +151,7 @@ mesh = SubResource("BoxMesh_jp7r8")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2320.3, 135.546, -36.1563)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Poster"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3389, 1.14441e-05, 44.3205)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4536, 1.14441e-05, 44.3205)
 mesh = SubResource("PlaneMesh_gtga4")
 surface_material_override/0 = SubResource("StandardMaterial3D_3nl2q")
 
