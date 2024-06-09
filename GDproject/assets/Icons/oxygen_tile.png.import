@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de21gnff48vpp"
-path.s3tc="res://.godot/imported/ElementH2O.png-439b0dc134183b4815f3b3a4a176770e.s3tc.ctex"
+uid="uid://b77p4d33f2sc3"
+path.s3tc="res://.godot/imported/oxygen_tile.png-0727212c8bf120c0823c0e0468755b86.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Icons/ElementH2O.png"
-dest_files=["res://.godot/imported/ElementH2O.png-439b0dc134183b4815f3b3a4a176770e.s3tc.ctex"]
+source_file="res://assets/Icons/oxygen_tile.png"
+dest_files=["res://.godot/imported/oxygen_tile.png-0727212c8bf120c0823c0e0468755b86.s3tc.ctex"]
 
 [params]
 

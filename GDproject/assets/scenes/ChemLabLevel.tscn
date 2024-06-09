@@ -1,11 +1,13 @@
-[gd_scene load_steps=37 format=3 uid="uid://rn6x8570uam"]
+[gd_scene load_steps=43 format=3 uid="uid://rn6x8570uam"]
 
 [ext_resource type="PackedScene" uid="uid://cqakvtbvxnhqx" path="res://assets/scenes/Environment/machine_calculator_large.tscn" id="1_fx3pe"]
 [ext_resource type="Texture2D" uid="uid://dyiidg0lb1o1f" path="res://assets/Icons/periodictable.png" id="1_p6pk4"]
 [ext_resource type="PackedScene" uid="uid://cp4fh3b8nra6c" path="res://assets/scenes/sceneobjects/pencil_case.tscn" id="2_3rcne"]
 [ext_resource type="Texture2D" uid="uid://dbk0gaqqms04u" path="res://assets/Icons/MadScientist.jpg" id="2_i68bx"]
 [ext_resource type="PackedScene" uid="uid://dytlwgceafw0e" path="res://assets/scenes/Environment/Counter2.tscn" id="3_fuinu"]
+[ext_resource type="Texture2D" uid="uid://b77p4d33f2sc3" path="res://assets/Icons/oxygen_tile.png" id="3_ulwf1"]
 [ext_resource type="PackedScene" uid="uid://woxngmukit4c" path="res://assets/scenes/Environment/fire_extinguisher.tscn" id="4_mgl40"]
+[ext_resource type="Texture2D" uid="uid://de21gnff48vpp" path="res://assets/Icons/ElementH2O.png" id="4_vqcfy"]
 [ext_resource type="PackedScene" uid="uid://b3w1ogw5kemmt" path="res://assets/scenes/Environment/book_001.tscn" id="5_gi74s"]
 [ext_resource type="PackedScene" uid="uid://ifrcddru2yw7" path="res://assets/scenes/Environment/sink.tscn" id="6_6c0a4"]
 [ext_resource type="PackedScene" uid="uid://dlhs2j6cj60b8" path="res://assets/scenes/sceneobjects/buchner_flask_large.tscn" id="7_ky4o7"]
@@ -52,6 +54,19 @@ size = Vector2(100, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yovlu"]
 albedo_texture = ExtResource("2_i68bx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_op050"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hakiq"]
+albedo_texture = ExtResource("3_ulwf1")
+emission = Color(0.262932, 0.262932, 0.262932, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4e344"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r87le"]
+albedo_texture = ExtResource("4_vqcfy")
 
 [node name="ChemLabLevel" type="Node3D"]
 
@@ -151,7 +166,7 @@ mesh = SubResource("BoxMesh_jp7r8")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2320.3, 135.546, -36.1563)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Poster"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4536, 1.14441e-05, 44.3205)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5698, 1.14441e-05, 44.3205)
 mesh = SubResource("PlaneMesh_gtga4")
 surface_material_override/0 = SubResource("StandardMaterial3D_3nl2q")
 
@@ -178,7 +193,20 @@ mesh = SubResource("PlaneMesh_4jylc")
 surface_material_override/0 = SubResource("StandardMaterial3D_yovlu")
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -367.844, 148.526, -37.0755)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2309.99, 99.4106, -24.633)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.1611, -10.5166, 62.3965)
+mesh = SubResource("PlaneMesh_op050")
+surface_material_override/0 = SubResource("StandardMaterial3D_hakiq")
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1334.61, 99.4106, -24.633)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.142, -9.21451, 11.1128)
+mesh = SubResource("PlaneMesh_4e344")
+surface_material_override/0 = SubResource("StandardMaterial3D_r87le")
 
 [node name="Lights" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 80)
