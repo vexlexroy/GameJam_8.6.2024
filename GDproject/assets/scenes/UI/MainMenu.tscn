@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdifevcfoydjb"]
+[gd_scene load_steps=5 format=3 uid="uid://bt2yoq4gdy584"]
 
 [ext_resource type="Texture2D" uid="uid://bgpjrjujt0csj" path="res://assets/Icons/PenMainMenuIcon.png" id="1_8f4tn"]
+[ext_resource type="Script" path="res://assets/scripts/MainMenu.gd" id="1_b2yvh"]
 [ext_resource type="Texture2D" uid="uid://bviusis4r5bms" path="res://assets/Icons/PlayButton.png" id="2_7ujdu"]
 [ext_resource type="Texture2D" uid="uid://bhbqhlm7ojpee" path="res://assets/Icons/QuitButton.png" id="3_carhc"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b2yvh")
 
 [node name="PenMascot" type="Sprite2D" parent="."]
 position = Vector2(142, 327)
@@ -32,3 +34,6 @@ offset_top = 367.75
 offset_right = 796.0
 offset_bottom = 571.75
 icon = ExtResource("3_carhc")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
