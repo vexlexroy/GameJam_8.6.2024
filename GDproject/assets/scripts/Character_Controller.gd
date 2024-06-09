@@ -23,6 +23,7 @@ var cap_outline_node : Node;
 var contact_cnt : int
 
 var in_water : bool = false;
+var in_helium : bool = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,18 +37,16 @@ func _ready():
 	set_outline(false);
 	return
 
-# TEST
-var cnt = 0;
-var timer = 0;
-# TEST
 func _process(delta):
 	syphoning = Input.is_action_pressed("syphon");
 	if syphoning:
 		var amount = syphon_factor * delta;
-		var el = 3 if in_water else 0; # TODO: Get element depending on environment
+		var el = 0;
+		if (in_water): el = GameMaster.Elements["H2O"];
+		elif (in_helium): el = GameMaster.Elements["He"];
+		print(el);
 		var _syphoned_amount = storage_node.syphon(el, amount);
 	return;
-# TEST
 
 func lerp(start, end, delta):
 	return start + ((end - start) * delta);
@@ -103,17 +102,21 @@ func average_prop_factor(portions : Array):
 
 
 func set_outline(value : bool):
-	pen_outline_node.visible = !value;
-	cap_outline_node.visible = !value;
+	pen_outline_node.visible = value;
+	cap_outline_node.visible = value;
 	return;
 
 # ------  Element effects  ------
+func light_weight_percent_update(total : float):
+	self.gravity_scale = 1 * total;
+	print("grav scale = " + str(self.gravity_scale));
+	return;
 # Water
 func fell_in_water(): in_water = true;
 func exited_water(): in_water = false;
 # Helium
-func helium_percent_update(helium_percent : float):
-	self.gravity_scale = 1 - (helium_percent * 0.5); return;
+func fell_in_helium(): in_helium = true;
+func exited_helium(): in_helium = false;
 
 
 # ------  Signals  ------

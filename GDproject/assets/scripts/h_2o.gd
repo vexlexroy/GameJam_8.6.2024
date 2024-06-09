@@ -10,11 +10,11 @@ func _ready():
 
 # Function to handle collision detection
 func _on_body_entered(body):
-	print("Collision detected with: ", body.name)
+	print(str(self.name) + ": Collision detected with: ", body.name)
 	character_node.fell_in_water();
 	
 
 # Optional: handle body exit
 func _on_body_exited(body):
-	print("Body exited collision with: ", body.name)
+	print(str(self.name) + ": Body exited collision with: ", body.name)
 	character_node.exited_water();

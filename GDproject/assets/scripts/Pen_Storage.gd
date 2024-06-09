@@ -2,14 +2,18 @@ extends Node
 
 class_name Storage
 
-var root : Node
 var character_node : Node
 var UI_node : Node
+
+# Update with new elements from GameMaster
+var light_weight_fac : Dictionary = {
+	"O" : -0.2, "H" : 0, "C" : 0, "H2O" : 0.3, "He" : -0.6
+};
 
 var current_amount : float
 func get_current_amount(): return current_amount;
 
-var helium_amount : float;
+var element_amount = {};
 
 class Portion:
 	var element : GameMaster.Elements
@@ -20,9 +24,11 @@ var element_stack : Array[Portion]
 
 
 func _ready():
-	root = get_node("..");
-	character_node = get_node("../PenCharacter");
+	character_node = get_node("..");
+	print(character_node);
 	UI_node = get_node("../../UI/Storage_UI");
+	for el in GameMaster.Elements.values():
+		element_amount[el] = 0.0;
 	return;
 
 
@@ -38,25 +44,26 @@ func release_next(amount : float = 1) -> Array:
 		if (last_portion.amount <= amount):
 			portions_released.append(last_portion);
 			amount -= last_portion.amount;
-			current_amount -= last_portion.amount;
+			remove_from_storage(last_portion); #current_amount -= last_portion.amount;
 			element_stack.pop_back();
 			UI_node.Remove_last_item();
-			if (last_portion.element == GameMaster.Elements.He):
-				helium_delta -= last_portion.amount;
+			#if (last_portion.element == GameMaster.Elements.He):
+			#	helium_delta -= last_portion.amount;
 		elif (last_portion.amount > amount):
 			portions_released.append(Portion.new(last_portion.element, amount));
-			if (last_portion.element == GameMaster.Elements.He):
-				helium_delta -= last_portion.amount;
+			#if (last_portion.element == GameMaster.Elements.He):
+			#	helium_delta -= last_portion.amount;
 			element_stack[-1].amount -= amount;
-			current_amount -= amount;
+			remove_from_storage(Portion.new(element_stack[-1].element, amount)) #current_amount -= amount;
 			break;
 	if (current_amount < 0): current_amount = 0;
 	elif (current_amount > 0): 
 		if (len(element_stack) == 0): 
-			current_amount = 0; helium_delta = helium_amount;
+			current_amount = 0; #helium_delta = helium_amount;
 		else: UI_node.Update_last_item(element_stack[-1].amount);
-	if (helium_delta != 0):
-		check_helium_percent(helium_delta);
+	#if (helium_delta != 0):
+	#	check_helium_percent(helium_delta);
+	check_light_weight_percent();
 	return portions_released;
 
 func print_storage():
@@ -73,19 +80,36 @@ func syphon(element : GameMaster.Elements, amount : float = 1) -> float:
 		amount = max - current_amount;
 	if (len(element_stack) > 0 and element_stack[-1].element == element):
 		element_stack[-1].amount += amount;
-		current_amount += amount;
+		add_to_storage(Portion.new(element_stack[-1].element, amount)); #current_amount += amount;
 		UI_node.Update_last_item(element_stack[-1].amount);
 	else:
 		var new_portion = Portion.new(element, amount);
 		element_stack.append(new_portion);
 		UI_node.Add_item(new_portion);
-		current_amount += amount;
-	if (element == GameMaster.Elements.He):
-		check_helium_percent(amount);
+		add_to_storage(new_portion); #current_amount += amount;
+	#if (element == GameMaster.Elements.He):
+	#	check_helium_percent(amount);
+	check_light_weight_percent();
 	return amount;
 
+# Overall amount tracking
+func add_to_storage(portion : Portion):
+	current_amount += portion.amount;
+	element_amount[portion.element] += portion.amount;
+	return;
+func remove_from_storage(portion : Portion):
+	current_amount -= portion.amount;
+	if (current_amount < 0): current_amount = 0;
+	element_amount[portion.element] -= portion.amount;
+	if (element_amount[portion.element] < 0):
+		element_amount[portion.element] = 0;
+	return;
+
+
 # ----  Element specific  ----
-func check_helium_percent(new_delta : float):
-	if (new_delta != 0):
-		helium_amount += new_delta;
-		character_node.helium_percent_update(helium_amount / GameMaster.max_container_size);
+func check_light_weight_percent():
+	var total = 1;
+	for el in GameMaster.Elements.values():
+		total += ((float(element_amount[el]) / float(GameMaster.max_container_size)) * float(light_weight_fac[GameMaster.Elements.keys()[el]]));
+	#print("total = " + str(total));
+	character_node.light_weight_percent_update(total);
