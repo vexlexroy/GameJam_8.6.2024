@@ -1,6 +1,7 @@
 # GameJam_8.6.2024
  GameJam
-
+# Itch.Io link:
+<a>https://vexlexroy.itch.io/pentrified-apentis</a>
 # Controls
 <b>R arrow, L arrow:</b>  tilting  
 <b>Up arrow/Shift:</b> expend element  
