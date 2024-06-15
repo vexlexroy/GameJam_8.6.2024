@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bnokm6wdnflok"
-path="res://.godot/imported/pen.glb-67d54152b187efb56b0677f0ae1d3716.scn"
+path="res://.godot/imported/pen.glb-a43b67a6b4c43567344f7dfe4733558a.scn"
 
 [deps]
 
-source_file="res://assets/3Dmodels/Pen_models/pen.glb"
-dest_files=["res://.godot/imported/pen.glb-67d54152b187efb56b0677f0ae1d3716.scn"]
+source_file="res://assets/3Dmodels/Pen_Models/pen.glb"
+dest_files=["res://.godot/imported/pen.glb-a43b67a6b4c43567344f7dfe4733558a.scn"]
 
 [params]
 

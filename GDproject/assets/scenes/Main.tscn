@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://dflod6dc7gejj" path="res://assets/scenes/PenCharacter.tscn" id="1_0cjkb"]
 [ext_resource type="PackedScene" uid="uid://dytlwgceafw0e" path="res://assets/scenes/Environment/Counter2.tscn" id="2_lmcog"]
-[ext_resource type="Script" path="res://assets/scripts/Camera.gd" id="3_05wg7"]
+[ext_resource type="Script" path="res://assets/scripts/Camera/Camera.gd" id="3_05wg7"]
 [ext_resource type="PackedScene" uid="uid://rn6x8570uam" path="res://assets/scenes/ChemLabLevel.tscn" id="4_8xr0d"]
-[ext_resource type="Script" path="res://assets/scenes/Camera_Raycast.gd" id="4_rpack"]
+[ext_resource type="Script" path="res://assets/scripts/Camera/Camera_Raycast.gd" id="4_rpack"]
 [ext_resource type="PackedScene" uid="uid://bhuxt4ajbm5ia" path="res://assets/scenes/UI/PenElements.tscn" id="5_y67js"]
-[ext_resource type="Script" path="res://assets/scripts/Camera_Overlay.gd" id="6_hoen8"]
+[ext_resource type="Script" path="res://assets/scripts/Camera/Camera_Overlay.gd" id="6_hoen8"]
 
 [node name="Scene" type="Node3D"]
 
 [node name="PenCharacter" parent="." instance=ExtResource("1_0cjkb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2496.05, 14.4658, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2496.05, 14.4658, 0)
 axis_lock_linear_z = true
 rot_speed = 1.5
 syphon_factor = 8.0

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btg1o6j2477qi"
-path.s3tc="res://.godot/imported/pen_painted_pen_img.png-c0b2e6566be691ed8abee9c958a012ee.s3tc.ctex"
+path.s3tc="res://.godot/imported/pen_painted_pen_img.png-b446fe5c9a94dec757837db9d4b0a4de.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/3Dmodels/Pen_models/pen_painted_pen_img.png"
-dest_files=["res://.godot/imported/pen_painted_pen_img.png-c0b2e6566be691ed8abee9c958a012ee.s3tc.ctex"]
+source_file="res://assets/3Dmodels/Pen_Models/pen_painted_pen_img.png"
+dest_files=["res://.godot/imported/pen_painted_pen_img.png-b446fe5c9a94dec757837db9d4b0a4de.s3tc.ctex"]
 
 [params]
 

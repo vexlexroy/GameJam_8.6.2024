@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://peiviknrfhjp"
-path="res://.godot/imported/prozor.glb-db1fd54d26293ffe8a95088a9c925fe1.scn"
+path="res://.godot/imported/prozor.glb-205408c56810de62f7bd5ce1f61f1da7.scn"
 
 [deps]
 
-source_file="res://assets/3Dmodels/Pen_models/prozor.glb"
-dest_files=["res://.godot/imported/prozor.glb-db1fd54d26293ffe8a95088a9c925fe1.scn"]
+source_file="res://assets/3Dmodels/Pen_Models/prozor.glb"
+dest_files=["res://.godot/imported/prozor.glb-205408c56810de62f7bd5ce1f61f1da7.scn"]
 
 [params]
 

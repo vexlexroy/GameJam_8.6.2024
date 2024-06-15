@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://463f8t8tk6tv"]
 
-[ext_resource type="Script" path="res://assets/scripts/h_2o.gd" id="1_m4x78"]
+[ext_resource type="Script" path="res://assets/scripts/Elements/h_2o.gd" id="1_m4x78"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_myim3"]
 

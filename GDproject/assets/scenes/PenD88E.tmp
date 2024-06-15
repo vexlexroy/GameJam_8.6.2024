@@ -156,6 +156,8 @@ mesh = ExtResource("7_tsdj8")
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
 mesh = ExtResource("8_wnd7f")
 script = ExtResource("9_td557")
+range = 1.0
+invert_horizontal = true
 
 [node name="Eye_R_Mesh" type="MeshInstance3D" parent="Eyes"]
 transform = Transform3D(0.177484, 0, -0.707107, 0, 1, 0, 0.177484, 0, 0.707107, 0.738, 3.834, 0.7)
@@ -166,6 +168,7 @@ skeleton = NodePath("../Eye_L_Mesh")
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
 mesh = ExtResource("10_ovgwo")
 script = ExtResource("9_td557")
+range = 1.0
 
 [connection signal="body_entered" from="CapArea" to="." method="_on_cap_area_body_entered"]
 [connection signal="body_exited" from="CapArea" to="." method="_on_cap_area_body_exited"]

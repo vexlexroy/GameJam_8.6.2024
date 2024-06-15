@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bry451luk30h2"
-path="res://.godot/imported/pen.blend-3525a6875894b7897dd9630eaff27c56.scn"
+path="res://.godot/imported/pen.blend-bf26e42754cdee92407f36e122d22a88.scn"
 
 [deps]
 
-source_file="res://assets/3Dmodels/Pen_models/pen.blend"
-dest_files=["res://.godot/imported/pen.blend-3525a6875894b7897dd9630eaff27c56.scn"]
+source_file="res://assets/3Dmodels/Pen_Models/pen.blend"
+dest_files=["res://.godot/imported/pen.blend-bf26e42754cdee92407f36e122d22a88.scn"]
 
 [params]
 
@@ -31,9 +31,13 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"Material.001": {
-"use_external/enabled": false,
-"use_external/path": "res://assets/materials/PenOutline.tres"
+"PenEyes_Material": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/3Dmodels/Pen_Models/PenEyes_Material.tres"
+},
+"PenIris_Material": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/3Dmodels/Pen_Models/PenIris_Material.tres"
 }
 },
 "meshes": {
@@ -46,6 +50,46 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": true,
 "save_to_file/path": "res://assets/3Dmodels/Pen_models/pen_cap.res"
+},
+"pen_Eye_L": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/3Dmodels/Pen_Models/pen_eye_l.res"
+},
+"pen_Eye_r": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/3Dmodels/Pen_Models/pen_eye_r.res"
+},
+"pen_Iris_L": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/3Dmodels/Pen_Models/pen_iris_l.res"
+},
+"pen_Iris_R": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/3Dmodels/Pen_Models/pen_iris_r.res"
 },
 "pen_Pen": {
 "generate/lightmap_uv": 0,
